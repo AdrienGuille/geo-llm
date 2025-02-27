@@ -39,10 +39,25 @@ for CHECKPOINT in list_of_models:
                     output = model(**input, output_hidden_states=True, output_attentions=False, return_dict=True, use_cache=False)
                     last_hidden_states = output.hidden_states[-1]
                     embeddings.append(last_hidden_states[0, ENTITY_INDEX].to("cpu"))
-                    token_ids = torch.argmax(output.logits, dim=-1).to("cpu")
-                    generated_text = tokenizer.decode(token_ids[0], skip_special_tokens=True)
+                    if "gps" in name:
+                        predictions = model.generate(
+                            **input,
+                            max_length=256,
+                            pad_token_id=tokenizer.pad_token_id,
+                            temperature=0.3,
+                            # top_p=0.9,
+                            # top_k=50,
+                            return_dict_in_generate=True,
+                            output_scores=True,
+                            pad_token_id=tokenizer.eos_token_id,
+                            # repetition_penalty=1.2
+                        )
+                        generated_tokens = predictions.sequences.cpu()  # This contains the token IDs
+                        generated_text = tokenizer.decode(generated_tokens[0], skip_special_tokens=True)
+                    else: # no generative
+                        generated_text = ""
                     outputs.append(generated_text)
-                    del input, output, last_hidden_states, token_ids
+                    del input, output, last_hidden_states
             cities[f"{CHECKPOINT}_{quantization}_{name}"] = embeddings
             cities[f"{CHECKPOINT}_{quantization}_{name}_output"] = outputs
     elif "GPTQ" in CHECKPOINT:
@@ -64,10 +79,25 @@ for CHECKPOINT in list_of_models:
                     output = model(**input, output_hidden_states=True, output_attentions=False, return_dict=True, use_cache=False)
                     last_hidden_states = output.hidden_states[-1]
                     embeddings.append(last_hidden_states[0, ENTITY_INDEX].to("cpu"))
-                    token_ids = torch.argmax(output.logits, dim=-1).to("cpu")
-                    generated_text = tokenizer.decode(token_ids[0], skip_special_tokens=True)
+                    if "gps" in name:
+                        predictions = model.generate(
+                            **input,
+                            max_length=256,
+                            pad_token_id=tokenizer.pad_token_id,
+                            temperature=0.3,
+                            # top_p=0.9,
+                            # top_k=50,
+                            return_dict_in_generate=True,
+                            output_scores=True,
+                            pad_token_id=tokenizer.eos_token_id,
+                            # repetition_penalty=1.2
+                        )
+                        generated_tokens = predictions.sequences.cpu()  # This contains the token IDs
+                        generated_text = tokenizer.decode(generated_tokens[0], skip_special_tokens=True)
+                    else: # no generative
+                        generated_text = ""
                     outputs.append(generated_text)
-                    del input, output, last_hidden_states, token_ids
+                    del input, output, last_hidden_states
             cities[f"{CHECKPOINT}_{quantization}_{name}"] = embeddings
             cities[f"{CHECKPOINT}_{quantization}_{name}_output"] = outputs
     else:
@@ -103,10 +133,25 @@ for CHECKPOINT in list_of_models:
                         output = model(**input, output_hidden_states=True, output_attentions=False, return_dict=True, use_cache=False)
                         last_hidden_states = output.hidden_states[-1]
                         embeddings.append(last_hidden_states[0, ENTITY_INDEX].to("cpu"))
-                        token_ids = torch.argmax(output.logits, dim=-1).to("cpu")
-                        generated_text = tokenizer.decode(token_ids[0], skip_special_tokens=True)
+                        if "gps" in name:
+                            predictions = model.generate(
+                                **input,
+                                max_length=256,
+                                pad_token_id=tokenizer.pad_token_id,
+                                temperature=0.3,
+                                # top_p=0.9,
+                                # top_k=50,
+                                return_dict_in_generate=True,
+                                output_scores=True,
+                                pad_token_id=tokenizer.eos_token_id,
+                                # repetition_penalty=1.2
+                            )
+                            generated_tokens = predictions.sequences.cpu()  # This contains the token IDs
+                            generated_text = tokenizer.decode(generated_tokens[0], skip_special_tokens=True)
+                        else: # no generative
+                            generated_text = ""
                         outputs.append(generated_text)
-                        del input, output, last_hidden_states, token_ids
+                        del input, output, last_hidden_states
                 cities[f"{CHECKPOINT}_{quantization}_{name}"] = embeddings
                 cities[f"{CHECKPOINT}_{quantization}_{name}_output"] = outputs
                 
