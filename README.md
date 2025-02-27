@@ -25,9 +25,14 @@ Through 6 criteria:
 
 2. Pipeline configuration
 
-- Copy and adapt the config: `cp pipeline-config.default.py pipeline-config.py`
+- Copy and adapt the config: `cp pipeline_config.default.py pipeline_config.py`
 - Add your HuggingFace Access Token.
 - Configure the list of models used. Make sur to have a granted access to their weights through [HuggingFace](huggingface.co/)
+
+3. Run the pipeline
+
+- Extract embedding and generate GPS coordinates with LLM: `python 1.embeddings.py` 
+- Map GPS coordinates using embedding with linear regression : **TODO**
 
 ## Authors
 
