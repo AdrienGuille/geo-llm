@@ -8,7 +8,7 @@ Through 6 criteria:
 |---------------------------|------------------------------------------------------------------|
 | **Model family**          | Llama, Mistral, Qwen                                             |
 | **Model size**            | From 1B to 70B                                                   |
-| **Quantization level**    | int4, int8, float16, bi.float16                                  |
+| **Quantization level**    | int4, int8, float16 - [[see HuggingFace](https://huggingface.co/docs/optimum/v1.17.1/concept_guides/quantization)]                                  |
 | **Fine-tuning**           | Base and Instruct models                                         |
 | **Different prompts**     | Various prompts to evaluate models' responses   [* See below]    |
 | **Languages**             | English and French                                               |
