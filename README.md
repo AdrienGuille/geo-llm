@@ -13,7 +13,7 @@ Through 6 criteria:
 | **Different prompts**     | Various prompts to evaluate models' responses   [* See below]    |
 | **Languages**             | English and French                                               |
 
-[*] Example of the prompts. You can configure them in [pipeline_config.py](https://github.com/AdrienGuille/geo-llm/blob/main/pipeline_config.default.py#L27):
+[*] Example of prompts. You can configure them in [pipeline_config.py](https://github.com/AdrienGuille/geo-llm/blob/main/pipeline_config.default.py#L27):
 
 ```python
 list_of_prompts = {

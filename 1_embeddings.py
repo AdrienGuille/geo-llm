@@ -49,7 +49,6 @@ for CHECKPOINT in list_of_models:
                             # top_k=50,
                             return_dict_in_generate=True,
                             output_scores=True,
-                            pad_token_id=tokenizer.eos_token_id,
                             # repetition_penalty=1.2
                         )
                         generated_tokens = predictions.sequences.cpu()  # This contains the token IDs
@@ -89,7 +88,6 @@ for CHECKPOINT in list_of_models:
                             # top_k=50,
                             return_dict_in_generate=True,
                             output_scores=True,
-                            pad_token_id=tokenizer.eos_token_id,
                             # repetition_penalty=1.2
                         )
                         generated_tokens = predictions.sequences.cpu()  # This contains the token IDs
@@ -143,7 +141,6 @@ for CHECKPOINT in list_of_models:
                                 # top_k=50,
                                 return_dict_in_generate=True,
                                 output_scores=True,
-                                pad_token_id=tokenizer.eos_token_id,
                                 # repetition_penalty=1.2
                             )
                             generated_tokens = predictions.sequences.cpu()  # This contains the token IDs
