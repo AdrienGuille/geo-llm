@@ -1,13 +1,29 @@
 # Evaluation of the gain/loss in geographic knowledge quality
 
+The goal is to assess the impact of model size, quantization level, prompt engineering, language of the prompts, and standard fine-tuning on the quality of geographic knowledge within the LLMs.
+
 Through 6 criteria:
 
-- Model family (Llama, Mistral, Qwen)
-- Model size (from 1B to 70B)
-- Quantization level (int4, int8, float16, bi.float16)
-- Fine-tuning (Base and Instruct models)
-- Different prompts
-- English and French languages
+| **Criterion**             | **Description**                                                  |
+|---------------------------|------------------------------------------------------------------|
+| **Model family**          | Llama, Mistral, Qwen                                             |
+| **Model size**            | From 1B to 70B                                                   |
+| **Quantization level**    | int4, int8, float16, bi.float16                                  |
+| **Fine-tuning**           | Base and Instruct models                                         |
+| **Different prompts**     | Various prompts to evaluate models' responses   [* See below]    |
+| **Languages**             | English and French                                               |
+
+[*] Example of the prompts. You can configure them in [pipeline_config.py](https://github.com/AdrienGuille/geo-llm/blob/main/pipeline_config.default.py#L27):
+
+```python
+list_of_prompts = {
+    "empty":"", 
+    "where_fr": "Où se trouve la ville de ", 
+    "gps_fr": "Quelles sont les coordonnées géographiques de la ville de ", 
+    "where_en": "Where is the city of ", 
+    "gps_en": "What are the geographical coordinates of the city of "
+}
+```
 
 ## Evaluation of geographic knowledge quality
 
@@ -34,9 +50,9 @@ Through 6 criteria:
 - Extract embedding and generate GPS coordinates with LLM: `python 1.embeddings.py` 
 - Map GPS coordinates using embedding with linear regression : **TODO**
 
-## Authors
+---
 
-| Auteur                                             | Institution                        |
+| Authors                                            |                         |
 |----------------------------------------------------|------------------------------------|
 | [Adrien Guille](https://adrienguille.github.io/)   | Lyon 2, UR ERIC                    |
 | [Rémy Decoupes](https://remy.decoupes.pages.mia.inra.fr/website/) | UMR TETIS / INRAE   |
