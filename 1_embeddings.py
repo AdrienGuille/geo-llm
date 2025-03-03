@@ -8,6 +8,8 @@ import numpy as np
 import pandas as pd
 import pickle as pk
 import torch
+from tqdm import tqdm
+
 
 cities = pd.read_csv("data/cities.csv")
 for CHECKPOINT in list_of_models:
@@ -28,6 +30,7 @@ for CHECKPOINT in list_of_models:
                 device_map="auto",
                 quantization_config=BitsAndBytesConfig(load_in_4bit=True))
         quantization = "int4"
+        model.generation_config.pad_token_id = tokenizer.pad_token_id
         for name, PROMPT in list_of_prompts.items():
             # Extraction des embeddings
             ENTITY_INDEX = -1
@@ -118,14 +121,18 @@ for CHECKPOINT in list_of_models:
                         torch_dtype=torch.float16,
                         device_map="auto",
                         quantization_config=BitsAndBytesConfig(load_in_4bit=True))
+            model.generation_config.pad_token_id = tokenizer.pad_token_id
             for name, PROMPT in list_of_prompts.items():
                 print(f"\t\t |->{name}")
+                tokenizer.pad_token_id = tokenizer.eos_token_id
+                model.config.pad_token_id = tokenizer.pad_token_id
+                print(f"tokenizer.pad_token_id: {tokenizer.pad_token_id} | tokenizer.eos_token_id: {tokenizer.eos_token_id} | model.config.pad_token_id: {model.config.pad_token_id}")
                 ENTITY_INDEX = -1
                 embeddings = []
                 outputs = []
                 torch.cuda.empty_cache()
                 # Extraction des embeddings
-                for city in cities.city:
+                for city in tqdm(cities.city, desc="Processing cities"):
                     input = tokenizer(PROMPT+city, add_special_tokens=False, return_tensors="pt").to("cuda")
                     with torch.no_grad():
                         output = model(**input, output_hidden_states=True, output_attentions=False, return_dict=True, use_cache=False)
@@ -134,7 +141,7 @@ for CHECKPOINT in list_of_models:
                         if "gps" in name:
                             predictions = model.generate(
                                 **input,
-                                max_length=256,
+                                max_length=100,
                                 pad_token_id=tokenizer.pad_token_id,
                                 temperature=0.3,
                                 # top_p=0.9,
