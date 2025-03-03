@@ -23,7 +23,7 @@ for CHECKPOINT in list_of_models:
         print("GPTQ tokenizer has to be loaded")
     model = None
     torch.cuda.empty_cache()
-    if "70B" in CHECKPOINT : # LLMs > 70B need to be loaded in int4 on A100 80Go VRAM
+    if "70B" in CHECKPOINT or "72B" in CHECKPOINT: # LLMs > 70B need to be loaded in int4 on A100 80Go VRAM
         model = AutoModelForCausalLM.from_pretrained(f"{CHECKPOINT}",
                 return_dict=True,
                 torch_dtype=torch.float16,
@@ -126,13 +126,13 @@ for CHECKPOINT in list_of_models:
                 print(f"\t\t |->{name}")
                 tokenizer.pad_token_id = tokenizer.eos_token_id
                 model.config.pad_token_id = tokenizer.pad_token_id
-                print(f"tokenizer.pad_token_id: {tokenizer.pad_token_id} | tokenizer.eos_token_id: {tokenizer.eos_token_id} | model.config.pad_token_id: {model.config.pad_token_id}")
+                # print(f"tokenizer.pad_token_id: {tokenizer.pad_token_id} | tokenizer.eos_token_id: {tokenizer.eos_token_id} | model.config.pad_token_id: {model.config.pad_token_id}")
                 ENTITY_INDEX = -1
                 embeddings = []
                 outputs = []
                 torch.cuda.empty_cache()
                 # Extraction des embeddings
-                for city in tqdm(cities.city, desc="Processing cities"):
+                for city in tqdm(cities.city, desc=f"{CHECKPOINT} - {quantization} - {name}"):
                     input = tokenizer(PROMPT+city, add_special_tokens=False, return_tensors="pt").to("cuda")
                     with torch.no_grad():
                         output = model(**input, output_hidden_states=True, output_attentions=False, return_dict=True, use_cache=False)
