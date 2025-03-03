@@ -32,11 +32,13 @@ for CHECKPOINT in list_of_models:
         quantization = "int4"
         model.generation_config.pad_token_id = tokenizer.pad_token_id
         for name, PROMPT in list_of_prompts.items():
+            tokenizer.pad_token_id = tokenizer.eos_token_id
+            model.config.pad_token_id = tokenizer.pad_token_id
             # Extraction des embeddings
             ENTITY_INDEX = -1
             embeddings = []
             outputs = []
-            for city in cities.city:
+            for city in tqdm(cities.city, desc=f"{CHECKPOINT} - {quantization} - {name}"):
                 input = tokenizer(PROMPT+city, add_special_tokens=False, return_tensors="pt").to("cuda")
                 with torch.no_grad():
                     output = model(**input, output_hidden_states=True, output_attentions=False, return_dict=True, use_cache=False)
@@ -45,7 +47,7 @@ for CHECKPOINT in list_of_models:
                     if "gps" in name:
                         predictions = model.generate(
                             **input,
-                            max_length=256,
+                            max_length=100,
                             pad_token_id=tokenizer.pad_token_id,
                             temperature=0.3,
                             # top_p=0.9,
@@ -62,6 +64,9 @@ for CHECKPOINT in list_of_models:
                     del input, output, last_hidden_states
             cities[f"{CHECKPOINT}_{quantization}_{name}"] = embeddings
             cities[f"{CHECKPOINT}_{quantization}_{name}_output"] = outputs
+            df = pd.DataFrame(cities)
+            df.to_csv(f"outputs/TMP/TMP_cities_embeddings_{CHECKPOINT.split('/')[-1]}_{quantization}_{name}.csv")
+            pk.dump(cities, open(f"outputs/TMP/TMP_cities_embeddings_{CHECKPOINT.split('/')[-1]}_{quantization}_{name}.pk", "wb"))
     elif "GPTQ" in CHECKPOINT:
         tokenizer = AutoTokenizer.from_pretrained(f"{CHECKPOINT}")
         model = AutoModelForCausalLM.from_pretrained(CHECKPOINT,
@@ -71,6 +76,8 @@ for CHECKPOINT in list_of_models:
                     device_map="auto")
         quantization = "GPT-Q"
         for name, PROMPT in list_of_prompts.items():
+            tokenizer.pad_token_id = tokenizer.eos_token_id
+            model.config.pad_token_id = tokenizer.pad_token_id
             # Extraction des embeddings
             ENTITY_INDEX = -1
             embeddings = []
