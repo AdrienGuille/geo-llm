@@ -39,13 +39,17 @@ list_of_prompts = {
 - Recrate the virtual env with conda: `conda env create -f requirements.yml`. It will create a conda env called `geo-llm`.
 - Activate this env: `conda activate geo-llm`
 
-2. Pipeline configuration
+2. Download input data
+
+- Download France geonames data from OpenDataSoft: [[link](https://public.opendatasoft.com/explore/dataset/geonames-all-cities-with-a-population-1000/export/?flg=fr-fr&disjunctive.cou_name_en&sort=name&refine.cou_name_en=France)]
+
+3. Pipeline configuration
 
 - Copy and adapt the config: `cp pipeline_config.default.py pipeline_config.py`
 - Add your HuggingFace Access Token.
 - Configure the list of models used. Make sur to have a granted access to their weights through [HuggingFace](huggingface.co/)
 
-3. Run the pipeline
+4. Run the pipeline
 
 - Extract embedding and generate GPS coordinates with LLM: `python 1.embeddings.py` 
 - Map GPS coordinates using embedding with linear regression : **TODO**

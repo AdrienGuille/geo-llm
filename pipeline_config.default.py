@@ -14,13 +14,17 @@ llama_models = ["Llama-3.2-1B", "Llama-3.2-1B-Instruct",
                    "Llama-3.1-70B", "Llama-3.1-70B-Instruct",]
 llama_models = [f"meta-llama/{model}" for model in llama_models]
 
-qwen_models = ["Qwen-1.5-0.5B", "Qwen-1.5-0.5B-Instruct",
-               "Qwen-1.5-1.8B", "Qwen-1.5-1.8B-Instruct",
-               "Qwen-1.5-4B", "Qwen-1.5-4B-Instruct",
-               "Qwen-1.5-7B", "Qwen-1.5-7B-Instruct",
-               "Qwen-1.5-14B", "Qwen-1.5-14B-Instruct",
-               "Qwen-1.5-72B", "Qwen-1.5-72B-Instruct"]
-qwen_models = [f"qwen/{model}" for model in qwen_models]
+qwen_models = [
+    "Qwen2.5-0.5B", "Qwen2.5-0.5B-Instruct",
+    "Qwen2.5-1.8B", "Qwen2.5-1.8B-Instruct",
+    "Qwen2.5-4B", "Qwen2.5-4B-Instruct",
+    "Qwen2.5-7B", "Qwen2.5-7B-Instruct",
+    "Qwen2.5-14B", "Qwen2.5-14B-Instruct",
+    "Qwen2.5-32B", "Qwen2.5-32B-Instruct",
+    "Qwen2.5-72B", "Qwen2.5-72B-Instruct"
+]
+
+qwen_models = [f"Qwen/{model}" for model in qwen_models]
 
 list_of_models =  mistral_models + llama_models + qwen_models
 
