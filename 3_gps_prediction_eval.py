@@ -26,7 +26,7 @@ def extract_coordinates(text):
     Handles both decimal format and DMS format.
     """
     # Regex for Decimal Coordinates: e.g. "43.296482, 5.36978"
-    decimal_pattern = re.search(r'([-+]?\d+\.\d+)\s*,\s*([-+]?\d+\.\d+)', text)
+    decimal_pattern = re.search(r'(\d+)°\s*(\d+)′\s*(\d+)″?\s*([NSnordsud]).*?(\d+)°\s*(\d+)′\s*(\d+)″?\s*([EOestouest])', text)
     
     if decimal_pattern:
         return float(decimal_pattern.group(1)), float(decimal_pattern.group(2))
