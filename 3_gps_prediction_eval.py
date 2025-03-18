@@ -25,15 +25,34 @@ def dms_to_decimal(degrees, minutes, seconds, direction):
 
 def extract_coordinates(text):
     """
-    Extrait la première latitude et longitude d'un texte donné.
-    Prend en charge les formats décimaux et DMS.
-    """
+    Extracts the first latitude and longitude from a given text.  
+    Supports both decimal and DMS formats.
+
+    DMS with clear latitude and longitude text:
+        43° 16′ 00″ N, 5° 20′ 00″ E
+        48° 51′ 24″ N, 2° 21′ 03″ E
+
+    DMS with "Latitude" and "Longitude" explicitly mentioned:
+        Latitude: 43° 21' 0" N, Longitude: 5° 22' 0" E
+
+    DMS with values in parentheses:
+        Latitude: 47°15'0"N (47.2500), Longitude: 2°10'0"W (-2.1667)
+
+    Standard decimal degrees:
+        48.8566°N latitude / 2.3522°E longitude.
+        43.299723 latitude, 5.374999 longitude.
+        45.766667 lat; 4.833333 long.
+        14.2766700, 4.4000000
+
+    Mixed or separated formats:
+        Latitude: 43.299722, Longitude: 5.370278
+        Latitude: 47°15'0"N, Longitude: 2°10'0"W
+        """
     
-    # ✅ Regex pour les coordonnées en format Décimal
     decimal_pattern = re.search(r'''
-        (?:latitude\s*[:de]*\s*)?([-+]?\d+\.\d+)°?\s*([NS])?  # Latitude (optionnellement avec N/S)
-        (?:\s*[,;/]\s*|\s*(?:et\s*à\s*une\s*|longitude\s*[:de]*)\s*)  # Séparateurs possibles
-        ([-+]?\d+\.\d+)°?\s*([EO])?  # Longitude (optionnellement avec E/O)
+        (?:latitude\s*[:de]*\s*)?([-+]?\d+\.\d+)°?\s*([NS])?   # Lat
+        (?:\s*[,;/]\s*|\s*(?:et\s*à\s*une\s*|longitude\s*[:de]*)\s*)  # handle intermediate char*
+        ([-+]?\d+\.\d+)°?\s*([EO])?  # long
     ''', text, re.VERBOSE | re.IGNORECASE)
 
     if decimal_pattern:
@@ -45,19 +64,18 @@ def extract_coordinates(text):
             lon *= -1
         return lat, lon
 
-    # ✅ Regex pour les coordonnées en format DMS
     dms_pattern = re.search(r'''
-        (?:(?:Latitude|latitude)\s*[:]*\s*)?(\d+)°\s*(\d+)['’′]?\s*(\d+)?["”″]?\s*([NSnordsud])  # Latitude
-        .{0,20}?  # Gestion de texte intermédiaire variable
-        (?:(?:Longitude|longitude)\s*[:]*\s*)?(\d+)°\s*(\d+)['’′]?\s*(\d+)?["”″]?\s*([EOestouest])  # Longitude
-    ''', text, re.VERBOSE | re.IGNORECASE)
+        (?:(?:Latitude|latitude)\s*[:]*\s*)?(\d+)°\s*(\d+)['’′]?\s*(\d+)?["”″]?\s*([NSnordsud])  # Lat
+        .{0,20}?  # handle intermediate char*
+        (?:(?:Longitude|longitude)\s*[:]*\s*)?(\d+)°\s*(\d+)['’′]?\s*(\d+)?["”″]?\s*([EOestouest])  
+    ''', text, re.VERBOSE | re.IGNORECASE) # long
 
     if dms_pattern:
         lat = dms_to_decimal(dms_pattern.group(1), dms_pattern.group(2), dms_pattern.group(3), dms_pattern.group(4))
         lon = dms_to_decimal(dms_pattern.group(5), dms_pattern.group(6), dms_pattern.group(7), dms_pattern.group(8))
         return lat, lon
 
-    return None, None  # Si aucune coordonnée trouvée
+    return None, None 
 
 
 def haversine(lat1, lon1, lat2, lon2):
