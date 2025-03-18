@@ -15,31 +15,50 @@ cities['Longitude'] = cities['Longitude'].astype(float)
 
 def dms_to_decimal(degrees, minutes, seconds, direction):
     """Convert DMS (Degrees, Minutes, Seconds) to Decimal format."""
+    if seconds == None:
+        seconds = '00'
     decimal = float(degrees) + float(minutes) / 60 + float(seconds) / 3600
     if direction in ["S", "O", "W"]:  # South and West are negative
         decimal *= -1
     return decimal
 
+
 def extract_coordinates(text):
     """
-    Extracts latitude and longitude from a given text.
-    Handles both decimal format and DMS format.
+    Extrait la première latitude et longitude d'un texte donné.
+    Prend en charge les formats décimaux et DMS.
     """
-    # Regex for Decimal Coordinates: e.g. "43.296482, 5.36978"
-    decimal_pattern = re.search(r'(\d+)°\s*(\d+)′\s*(\d+)″?\s*([NSnordsud]).*?(\d+)°\s*(\d+)′\s*(\d+)″?\s*([EOestouest])', text)
     
+    # ✅ Regex pour les coordonnées en format Décimal
+    decimal_pattern = re.search(r'''
+        (?:latitude\s*[:de]*\s*)?([-+]?\d+\.\d+)°?\s*([NS])?  # Latitude (optionnellement avec N/S)
+        (?:\s*[,;/]\s*|\s*(?:et\s*à\s*une\s*|longitude\s*[:de]*)\s*)  # Séparateurs possibles
+        ([-+]?\d+\.\d+)°?\s*([EO])?  # Longitude (optionnellement avec E/O)
+    ''', text, re.VERBOSE | re.IGNORECASE)
+
     if decimal_pattern:
-        return float(decimal_pattern.group(1)), float(decimal_pattern.group(2))
-
-    # Regex for DMS Coordinates: e.g. "48° 51' 24\" N and 2° 21' 0\" E"
-    dms_pattern = re.search(r"(\d+)°\s*(\d+)′\s*(\d+)″\s*(N|S|nord|sud).*?(\d+)°\s*(\d+)′\s*(\d+)″\s*(E|O|est|ouest)", text, re.IGNORECASE)
-
-    if dms_pattern:
-        lat = dms_to_decimal(dms_pattern.group(1), dms_pattern.group(2), dms_pattern.group(3), dms_pattern.group(4)[0].upper())
-        lon = dms_to_decimal(dms_pattern.group(5), dms_pattern.group(6), dms_pattern.group(7), dms_pattern.group(8)[0].upper())
+        lat = float(decimal_pattern.group(1))
+        lon = float(decimal_pattern.group(3))
+        if decimal_pattern.group(2) and decimal_pattern.group(2).upper() == 'S':
+            lat *= -1
+        if decimal_pattern.group(4) and decimal_pattern.group(4).upper() in ['O', 'W']:
+            lon *= -1
         return lat, lon
 
-    return None, None  # Return None if no coordinates are found
+    # ✅ Regex pour les coordonnées en format DMS
+    dms_pattern = re.search(r'''
+        (?:(?:Latitude|latitude)\s*[:]*\s*)?(\d+)°\s*(\d+)['’′]?\s*(\d+)?["”″]?\s*([NSnordsud])  # Latitude
+        .{0,20}?  # Gestion de texte intermédiaire variable
+        (?:(?:Longitude|longitude)\s*[:]*\s*)?(\d+)°\s*(\d+)['’′]?\s*(\d+)?["”″]?\s*([EOestouest])  # Longitude
+    ''', text, re.VERBOSE | re.IGNORECASE)
+
+    if dms_pattern:
+        lat = dms_to_decimal(dms_pattern.group(1), dms_pattern.group(2), dms_pattern.group(3), dms_pattern.group(4))
+        lon = dms_to_decimal(dms_pattern.group(5), dms_pattern.group(6), dms_pattern.group(7), dms_pattern.group(8))
+        return lat, lon
+
+    return None, None  # Si aucune coordonnée trouvée
+
 
 def haversine(lat1, lon1, lat2, lon2):
     """
@@ -87,30 +106,23 @@ def calculate_distance(row, checkpoint, quantization, name):
 
 results = []
 for CHECKPOINT in list_of_models:
-    try:
-        print("###########################################")
-        print(f" - {CHECKPOINT} - ")
-        if "70B" in CHECKPOINT or "72B" in CHECKPOINT:
-                quantization = "int4"
+    print(f" - {CHECKPOINT} - ")
+    if "70B" in CHECKPOINT or "72B" in CHECKPOINT:
+            quantization = "int4"
+            if f"{CHECKPOINT}_{quantization}_gps_fr_output" in cities.columns:
                 for name, PROMPT in list_of_prompts.items():
                     if "gps" in name:
                         cities[f"{CHECKPOINT}_{quantization}_{name}_lat_predicted"], cities[f"{CHECKPOINT}_{quantization}_{name}_lon_predicted"] = zip(*cities[f"{CHECKPOINT}_{quantization}_{name}_output"].apply(extract_coordinates))
                         cities[f"{CHECKPOINT}_{quantization}_{name}_distance"] = cities.apply(calculate_distance, axis=1, checkpoint=CHECKPOINT, quantization=quantization, name=name)
-        else:
-            for quantization in quantizations:
+    else:
+        for quantization in quantizations:
+            if f"{CHECKPOINT}_{quantization}_gps_fr_output" in cities.columns:
                 for name, PROMPT in list_of_prompts.items():
                     # print(f"{CHECKPOINT.split('/')[-1]}_{quantization}_{name}")
                     if "gps" in name:
                         cities[f"{CHECKPOINT}_{quantization}_{name}_lat_predicted"], cities[f"{CHECKPOINT}_{quantization}_{name}_lon_predicted"] = zip(*cities[f"{CHECKPOINT}_{quantization}_{name}_output"].apply(extract_coordinates))
                         cities[f"{CHECKPOINT}_{quantization}_{name}_distance"] = cities.apply(calculate_distance, axis=1, checkpoint=CHECKPOINT, quantization=quantization, name=name)
 
-    except Exception as e:
-        print("###########################################")
-        print(f" - Could not run exp with: {CHECKPOINT} - ")
-        print(f"An error occurred: {e}")
-        traceback.print_exc()
-        print("###########################################")
-print("###########################################")
 df = pd.DataFrame(cities)
 date_str = datetime.datetime.now().strftime("%Y-%m-%d")
 df.to_csv(f"outputs/cities_prediction_{date_str}.csv", index=False)
