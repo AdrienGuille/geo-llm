@@ -22,6 +22,8 @@ def dms_to_decimal(degrees, minutes, seconds, direction):
         decimal *= -1
     return decimal
 
+global_pattern_not_recognized_debug = []
+global_output_truncated = 0
 
 def extract_coordinates(text):
     """
@@ -50,9 +52,9 @@ def extract_coordinates(text):
         """
     
     decimal_pattern = re.search(r'''
-        (?:latitude\s*[:de]*\s*)?([-+]?\d+\.\d+)°?\s*([NS])?   # Lat
-        (?:\s*[,;/]\s*|\s*(?:et\s*à\s*une\s*|longitude\s*[:de]*)\s*)  # handle intermediate char*
-        ([-+]?\d+\.\d+)°?\s*([EO])?  # long
+        (?:latitude\s*[:de]*\s*)?([-+]?\d+\.\d+)°?\s*(?:degrees|degrés)?\s*(North|South|Nord|Sud|N|S)?(?:\s*of\s*the\s*equator)?\.?\s*(?:[de]*\s*Latitude)?   # Lat
+        (?:\s*[,;/]\s*|\s*(?:et\s*à\s*une\s*|et\s*à\s*la\s*|\s*and\s*)?(?:longitude\s*[:de]*)?\s*)?  # handle intermediate char*
+        ([-+]?\d+\.\d+)°?\s*(?:degrees|degrés)?\s*(East|West|Est|Ouest|E|O)?\.?\s*(?:Longitude)?(?:\s*of\s*Prime\s*Meridian)?  # long
     ''', text, re.VERBOSE | re.IGNORECASE)
 
     if decimal_pattern:
@@ -64,16 +66,35 @@ def extract_coordinates(text):
             lon *= -1
         return lat, lon
 
+    # dms_pattern = re.search(r'''
+    #     (?:(?:Latitude|latitude)\s*[:]*\s*)?(\d+)°\s*(\d+)['’′]?\s*(\d+)?["”″]?\s*([NSnordsud])  # Lat
+    #     .{0,20}?  # handle intermediate char*
+    #     (?:(?:Longitude|longitude)\s*[:]*\s*)?(\d+)°\s*(\d+)['’′]?\s*(\d+)?["”″]?\s*([EOestouest])  
+    # ''', text, re.VERBOSE | re.IGNORECASE) # long
+    # if dms_pattern:
+    #     lat = dms_to_decimal(dms_pattern.group(1), dms_pattern.group(2), dms_pattern.group(3), dms_pattern.group(4))
+    #     lon = dms_to_decimal(dms_pattern.group(5), dms_pattern.group(6), dms_pattern.group(7), dms_pattern.group(8))
+    #     return lat, lon
+        
     dms_pattern = re.search(r'''
-        (?:(?:Latitude|latitude)\s*[:]*\s*)?(\d+)°\s*(\d+)['’′]?\s*(\d+)?["”″]?\s*([NSnordsud])  # Lat
-        .{0,20}?  # handle intermediate char*
-        (?:(?:Longitude|longitude)\s*[:]*\s*)?(\d+)°\s*(\d+)['’′]?\s*(\d+)?["”″]?\s*([EOestouest])  
-    ''', text, re.VERBOSE | re.IGNORECASE) # long
-
+        (?:(?:Latitude|latitude)\s*[:]*\s*)?(\d+)°\s*(\d+)['’′]?\s*(?:([\d.]+)?["”″]?)?\s*(?:Nord|Sud|N|S)  # Latitude avec option secondes
+        .{0,20}?  # Gérer l'espace intermédiaire
+        (?:(?:Longitude|longitude)\s*[:]*\s*)?(\d+)°\s*(\d+)['’′]?\s*(?:([\d.]+)?["”″]?)?\s*(?:Est|Ouest|E|O)  # Longitude
+    ''', text, re.VERBOSE | re.IGNORECASE)
     if dms_pattern:
-        lat = dms_to_decimal(dms_pattern.group(1), dms_pattern.group(2), dms_pattern.group(3), dms_pattern.group(4))
-        lon = dms_to_decimal(dms_pattern.group(5), dms_pattern.group(6), dms_pattern.group(7), dms_pattern.group(8))
+        lat_deg, lat_min, lat_sec, lon_deg, lon_min, lon_sec = dms_pattern.groups()
+        
+        # Convertir les valeurs en float
+        lat = float(lat_deg) + float(lat_min) / 60 + (float(lat_sec) / 3600 if lat_sec else 0)
+        lon = float(lon_deg) + float(lon_min) / 60 + (float(lon_sec) / 3600 if lon_sec else 0)
+
         return lat, lon
+    elif "0000000000000000000000000000000000000000000" in text or "3333333333333333333333" in text:
+        global global_output_truncated
+        global_output_truncated = global_output_truncated + 1
+    else:
+        global_pattern_not_recognized_debug.append(text)
+
 
     return None, None 
 
@@ -88,6 +109,9 @@ def haversine(lat1, lon1, lat2, lon2):
     distance -- Distance between the two points in kilometers
     """
     
+    if lon1 == None:
+        return np.NaN
+
     # Convert degrees to radians
     lat1, lon1, lat2, lon2 = map(math.radians, [lat1, lon1, lat2, lon2])
     
@@ -146,3 +170,8 @@ date_str = datetime.datetime.now().strftime("%Y-%m-%d")
 df.to_csv(f"outputs/cities_prediction_{date_str}.csv", index=False)
 df.to_csv(f"outputs/cities_prediction.csv", index=False)
 print(df.head())
+for pattern in global_pattern_not_recognized_debug:
+    print(pattern)
+    print("\n")
+print(f"Nb of non-recognized pattern: {len(global_pattern_not_recognized_debug)}")
+print(f"Nb of truncated prediction like: 'Latitude: 45.750000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000' : {global_output_truncated}")
