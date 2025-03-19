@@ -52,7 +52,9 @@ list_of_prompts = {
 4. Run the pipeline
 
 - Extract embedding and generate GPS coordinates with LLM: `python 1.embeddings.py` 
-- Map GPS coordinates using embedding with linear regression : **TODO**
+- Map GPS coordinates using embedding with linear regression: `2_regression.py`
+- Extract GPS coordinates from models' output: `3_gps_prediction_eval.py`
+- Analyse results : **TODO**
 
 ---
 
