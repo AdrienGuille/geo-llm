@@ -89,6 +89,11 @@ def extract_coordinates(text):
         lon = float(lon_deg) + float(lon_min) / 60 + (float(lon_sec) / 3600 if lon_sec else 0)
 
         return lat, lon
+    
+    # try dummy regex if previous did not work. Just match numbers before a °
+    pattern = re.findall(r'([-+]?\d*\.?\d+)°', text)  # Capture optional minus (-) or plus (+) sign
+    if len(pattern) >= 2:
+        return float(pattern[0]), float(pattern[1])
     elif "0000000000000000000000000000000000000000000" in text or "3333333333333333333333" in text:
         global global_output_truncated
         global_output_truncated = global_output_truncated + 1
