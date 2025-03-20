@@ -7,8 +7,9 @@ import pickle as pk
 import re
 import math
 
-cities = pk.load(open("outputs/cities_embeddings.pk", "rb"))
-cities = pk.load(open("outputs/TMP/TMP_cities_embeddings_Mistral-Small-24B-Base-2501_int4_gps_en.pk", "rb"))
+# cities = pk.load(open("outputs/cities_embeddings.pk", "rb"))
+# cities = pk.load(open("outputs/TMP/TMP_cities_embeddings_Mistral-Small-24B-Base-2501_int4_gps_en.pk", "rb"))
+cities = pk.load(open("outputs/TMP/intermediate_results.pk", "rb"))
 cities[['Latitude', 'Longitude']] = cities['Coordinates'].str.split(", ", expand=True)
 cities['Latitude'] = cities['Latitude'].astype(float)
 cities['Longitude'] = cities['Longitude'].astype(float)
@@ -51,6 +52,9 @@ def extract_coordinates(text):
         Latitude: 47°15'0"N, Longitude: 2°10'0"W
         """
     
+    if text != text: # nan value
+        return None, None
+
     decimal_pattern = re.search(r'''
         (?:latitude\s*[:de]*\s*)?([-+]?\d+\.\d+)°?\s*(?:degrees|degrés)?\s*(North|South|Nord|Sud|N|S)?(?:\s*of\s*the\s*equator)?\.?\s*(?:[de]*\s*Latitude)?   # Lat
         (?:\s*[,;/]\s*|\s*(?:et\s*à\s*une\s*|et\s*à\s*la\s*|\s*and\s*)?(?:longitude\s*[:de]*)?\s*)?  # handle intermediate char*
@@ -163,7 +167,7 @@ for CHECKPOINT in list_of_models:
                         cities[f"{CHECKPOINT}_{quantization}_{name}_distance"] = cities.apply(calculate_distance, axis=1, checkpoint=CHECKPOINT, quantization=quantization, name=name)
     else:
         for quantization in quantizations:
-            if f"{CHECKPOINT}_{quantization}_gps_fr_output" in cities.columns:
+            if f"{CHECKPOINT}_{quantization}_gps_fr_output" in cities.columns and f"{CHECKPOINT}_{quantization}_gps_en_output" in cities.columns:
                 for name, PROMPT in list_of_prompts.items():
                     # print(f"{CHECKPOINT.split('/')[-1]}_{quantization}_{name}")
                     if "gps" in name:
