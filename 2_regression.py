@@ -10,10 +10,10 @@ import pandas as pd
 import datetime
 import traceback
 
-cities = pk.load(open("outputs/cities_embeddings.pk", "rb"))
-# cities = pd.read_csv("outputs/TMP/TMP_cities_embeddings_Mistral-Small-24B-Base-2501_int4_gps_en.csv")
-cities = pk.load(open("outputs/TMP/TMP_cities_embeddings_Mistral-Small-24B-Base-2501_int4_gps_en.pk", "rb"))
-# cities = pd.read_csv("outputs/cities_embeddings.csv")
+# cities = pk.load(open("outputs/cities_embeddings.pk", "rb"))
+# cities = pk.load(open("outputs/TMP/TMP_cities_embeddings_Mistral-Small-24B-Base-2501_int4_gps_en.pk", "rb"))
+cities = pk.load(open("outputs/TMP/intermediate_results.pk", "rb"))
+
 cities = cities.sample(frac=1.0, random_state=0)
 cities[['Latitude', 'Longitude']] = cities['Coordinates'].str.split(", ", expand=True)
 cities['Latitude'] = cities['Latitude'].astype(float)
@@ -31,7 +31,7 @@ for CHECKPOINT in list_of_models:
                 quantization = "int4"
                 for name, PROMPT in list_of_prompts.items():
                     print(f"{CHECKPOINT.split('/')[-1]}_{quantization}_{name}")
-                    embeddings = np.array([emb.numpy() for emb in cities[f"{CHECKPOINT}_{quantization}_{name}"]])
+                    embeddings = np.array([emb.numpy() if hasattr(emb, 'numpy') else np.array(emb) for emb in cities[f"{CHECKPOINT}_{quantization}_{name}"]])
                     scaler = StandardScaler(with_mean=False, with_std=True)
                     embeddings = scaler.fit_transform(embeddings)
                     print(embeddings.shape[1])
@@ -51,7 +51,11 @@ for CHECKPOINT in list_of_models:
             for quantization in quantizations:
                 for name, PROMPT in list_of_prompts.items():
                     # print(f"{CHECKPOINT.split('/')[-1]}_{quantization}_{name}")
-                    embeddings = np.array([emb.numpy() for emb in cities[f"{CHECKPOINT}_{quantization}_{name}"]])
+                    embeddings = np.array([
+                        emb.numpy() if hasattr(emb, 'numpy') else np.nan  
+                        for emb in cities[f"{CHECKPOINT}_{quantization}_{name}"]
+                        if emb is not None and not (isinstance(emb, float) and np.isnan(emb))  # Filtrer NaN et None
+                    ])
                     scaler = StandardScaler(with_mean=False, with_std=True)
                     embeddings = scaler.fit_transform(embeddings)
                     # print(embeddings.shape[1])
@@ -72,11 +76,11 @@ for CHECKPOINT in list_of_models:
         print("###########################################")
         print(f" - Could not run exp with: {CHECKPOINT} - ")
         print(f"An error occurred: {e}")
-        traceback.print_exc()
+        # traceback.print_exc()
         print("###########################################")
 print("###########################################")
 df = pd.DataFrame(results)
 date_str = datetime.datetime.now().strftime("%Y-%m-%d")
 df.to_csv(f"outputs/cities_regression_{date_str}.csv", index=False)
 df.to_csv(f"outputs/cities_regression.csv", index=False)
-print(df.head())
+print(df)
