@@ -19,7 +19,7 @@ cities[['Latitude', 'Longitude']] = cities['Coordinates'].str.split(", ", expand
 cities['Latitude'] = cities['Latitude'].astype(float)
 cities['Longitude'] = cities['Longitude'].astype(float)
 
-list_of_models =  mistral_models
+# list_of_models =  mistral_models
 
 N = 300
 results = []
