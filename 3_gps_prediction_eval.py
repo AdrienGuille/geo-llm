@@ -174,9 +174,17 @@ df = pd.DataFrame(cities)
 date_str = datetime.datetime.now().strftime("%Y-%m-%d")
 df.to_csv(f"outputs/cities_prediction_{date_str}.csv", index=False)
 df.to_csv(f"outputs/cities_prediction.csv", index=False)
+
+# Debugging 
 print(df.head())
+
 for pattern in global_pattern_not_recognized_debug:
+    print("------------")
     print(pattern)
-    print("\n")
+
+print("------------")
+print("Successfull GPS coordinates parsing: ")
+[print(f"{k}: {df[k].count()}") for k in df.keys() if 'predicted' in k]
+
 print(f"Nb of non-recognized pattern: {len(global_pattern_not_recognized_debug)}")
 print(f"Nb of truncated prediction like: 'Latitude: 45.750000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000' : {global_output_truncated}")
