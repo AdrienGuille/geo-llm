@@ -3,7 +3,7 @@ import pandas as pd
 
 # List of input pickle files
 input_files = [
-    "outputs/TMP/TMP_cities_embeddings_Qwen2.5-32B_float16_gps_fr.pk",
+    "outputs/TMP/TMP_cities_embeddings_Qwen2.5-32B_float16_gps_en.pk",
     "outputs/TMP/TMP_cities_embeddings_Mistral-Small-24B-Base-2501_int4_gps_en.pk"
 ]
 
