@@ -42,6 +42,7 @@ list_of_prompts = {
 2. Download input data
 
 - Download France geonames data from OpenDataSoft: [[link](https://public.opendatasoft.com/explore/dataset/geonames-all-cities-with-a-population-1000/export/?flg=fr-fr&disjunctive.cou_name_en&sort=name&refine.cou_name_en=France)]
+- Donwload France mainland boundaries from [github.com/gregoiredavid/france-geojson](https://github.com/gregoiredavid/france-geojson/blob/master/metropole.geojson)
 
 3. Pipeline configuration
 
