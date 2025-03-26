@@ -3,12 +3,12 @@ import pandas as pd
 
 # List of input pickle files
 input_files = [
-    "outputs/TMP/TMP_cities_embeddings_Qwen2.5-32B_float16_gps_en.pk",
-    "outputs/TMP/TMP_cities_embeddings_Mistral-Small-24B-Base-2501_int4_gps_en.pk"
+    "outputs/TMP/intermediate_results.pk",
+    "outputs/TMP/TMP_cities_embeddings_Qwen2.5-72B-Instruct_int4_gps_en.pk"
 ]
 
 # Output pickle file
-output_file = "outputs/TMP/intermediate_results.pk"
+output_file = "outputs/TMP/intermediate_results_2.pk"
 
 def load_pickle(file_path):
     """Load a pickle file without modifying data types."""
