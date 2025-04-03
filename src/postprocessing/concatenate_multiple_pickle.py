@@ -3,12 +3,12 @@ import pandas as pd
 
 # List of input pickle files
 input_files = [
-    "outputs/TMP/intermediate_results.pk",
-    "outputs/TMP/TMP_cities_embeddings_Qwen2.5-72B-Instruct_int4_gps_en.pk"
+    "outputs/TMP/intermediate_results_2.pk",
+    "outputs/TMP/TMP_cities_embeddings_Qwen2.5-72B_int4_gps_en.pk"
 ]
 
 # Output pickle file
-output_file = "outputs/TMP/intermediate_results_2.pk"
+output_file = "outputs/TMP/intermediate_results_3.pk"
 
 def load_pickle(file_path):
     """Load a pickle file without modifying data types."""
@@ -26,7 +26,15 @@ def merge_pickles_columnwise(input_files, output_file):
     # Merge on common columns (outer join to keep all columns)
     df_merged = dataframes[0]
     for df in dataframes[1:]:
-        df_merged = df_merged.merge(df, on=list(set(df_merged.columns) & set(df.columns)), how="outer")
+        # trouble with Mistral - Nemo
+        columns_to_drop = df.columns[df.columns.str.contains('Nemo', case=False)]
+        df.drop(columns=columns_to_drop, inplace=True)
+        try:
+            df_merged = df_merged.merge(df, on=list(set(df_merged.columns) & set(df.columns)), how="outer")
+        except Exception as e:
+            print("Erreur lors de la fusion:", e)
+            print("Colonnes de df_merged:", df_merged.columns)
+            print("Colonnes de df:", df.columns)
 
     # Save the merged DataFrame using pickle
     with open(output_file, "wb") as f:
