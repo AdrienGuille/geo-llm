@@ -1,9 +1,10 @@
 hf_access_token = "hf..."
 
 mistral_models = ["Mistral-7B-v0.1", "Mistral-7B-Instruct-v0.1", 
-                  "Mistral-7B-Instruct-v0.2", "Mistral-7B-Instruct-v0.3",
-                   "Mistral-Nemo-Base-2407", "Mistral-Nemo-Instruct-2407",
-                   "Mistral-Small-24B-Base-2501", "Mistral-Small-24B-Instruct-2501"]
+                  "Mistral-7B-Instruct-v0.2", 
+                  "Mistral-7B-v0.3", "Mistral-7B-Instruct-v0.3",
+                  # "Mistral-Nemo-Base-2407", "Mistral-Nemo-Instruct-2407",
+                  "Mistral-Small-24B-Base-2501", "Mistral-Small-24B-Instruct-2501"]
 mistral_models = [f"mistralai/{model}" for model in mistral_models]
 
 llama_models = ["Llama-3.2-1B", "Llama-3.2-1B-Instruct", 
@@ -16,8 +17,8 @@ llama_models = [f"meta-llama/{model}" for model in llama_models]
 
 qwen_models = [
     "Qwen2.5-0.5B", "Qwen2.5-0.5B-Instruct",
-    "Qwen2.5-1.8B", "Qwen2.5-1.8B-Instruct",
-    "Qwen2.5-4B", "Qwen2.5-4B-Instruct",
+    # "Qwen2.5-1.8B", "Qwen2.5-1.8B-Instruct", # NA anymore
+    # "Qwen2.5-4B", "Qwen2.5-4B-Instruct", # NA anymore
     "Qwen2.5-7B", "Qwen2.5-7B-Instruct",
     "Qwen2.5-14B", "Qwen2.5-14B-Instruct",
     "Qwen2.5-32B", "Qwen2.5-32B-Instruct",
