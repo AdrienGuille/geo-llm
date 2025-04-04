@@ -6,6 +6,7 @@ import traceback
 import pickle as pk
 import re
 import math
+from sklearn.metrics.pairwise import haversine_distances
 
 # cities = pk.load(open("outputs/cities_embeddings.pk", "rb"))
 # cities = pk.load(open("outputs/TMP/TMP_cities_embeddings_Mistral-Small-24B-Base-2501_int4_gps_en.pk", "rb"))
@@ -124,16 +125,16 @@ def haversine(lat1, lon1, lat2, lon2):
     # Convert degrees to radians
     lat1, lon1, lat2, lon2 = map(math.radians, [lat1, lon1, lat2, lon2])
     
-    # Haversine formula
-    dlat = lat2 - lat1
-    dlon = lon2 - lon1
-    a = math.sin(dlat/2)**2 + math.cos(lat1) * math.cos(lat2) * math.sin(dlon/2)**2
-    c = 2 * math.atan2(math.sqrt(a), math.sqrt(1-a))
+    # Haversine with scikit
+    try:
+        c = haversine_distances([[lat1, lon1], [lat2, lon2]])
+    except: 
+        return np.NaN
     
     # Radius of the Earth in kilometers (mean radius)
     R = 6371.0
     distance = R * c
-    return distance
+    return distance[0][1]
 
 def calculate_distance(row, checkpoint, quantization, name):
     """

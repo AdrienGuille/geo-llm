@@ -3,7 +3,7 @@ hf_access_token = "hf..."
 mistral_models = ["Mistral-7B-v0.1", "Mistral-7B-Instruct-v0.1", 
                   "Mistral-7B-Instruct-v0.2", 
                   "Mistral-7B-v0.3", "Mistral-7B-Instruct-v0.3",
-                  # "Mistral-Nemo-Base-2407", "Mistral-Nemo-Instruct-2407",
+                  # "Mistral-Nemo-Base-2407", "Mistral-Nemo-Instruct-2407", # need a particular arg with transformers
                   "Mistral-Small-24B-Base-2501", "Mistral-Small-24B-Instruct-2501"]
 mistral_models = [f"mistralai/{model}" for model in mistral_models]
 
