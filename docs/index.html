@@ -1,0 +1,3943 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Experimentation Table</title>
+    <style>
+        table { border-collapse: collapse; width: 100%; }
+        th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+        th { background-color: #f2f2f2; }
+        a { text-decoration: none; color: blue; }
+    </style>
+</head>
+<body>
+    <h2>Model Experimentations</h2>
+    <table>
+        <tr>
+            <th>Model Family</th>
+            <th>Model Size</th>
+            <th>Quantization</th>
+            <th>Lang Prompt</th>
+            <th>Fine-tuning</th>
+            <th>Map Link</th>
+        </tr>
+
+            <tr>
+                <td>mistralai</td>
+                <td>7B</td>
+                <td>float16</td>
+                <td>empty</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>mistralai</td>
+                <td>7B</td>
+                <td>float16</td>
+                <td>where_fr</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>mistralai</td>
+                <td>7B</td>
+                <td>float16</td>
+                <td>gps_fr</td>
+                <td>-</td>
+                <td><a href="shifting_maps_Mistral-7B-v0.1_float16_gps_fr.html">shifting_maps_Mistral-7B-v0.1_float16_gps_fr.html</a></td>
+            </tr>
+            
+            <tr>
+                <td>mistralai</td>
+                <td>7B</td>
+                <td>float16</td>
+                <td>where_en</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>mistralai</td>
+                <td>7B</td>
+                <td>float16</td>
+                <td>gps_en</td>
+                <td>-</td>
+                <td><a href="shifting_maps_Mistral-7B-v0.1_float16_gps_en.html">shifting_maps_Mistral-7B-v0.1_float16_gps_en.html</a></td>
+            </tr>
+            
+            <tr>
+                <td>mistralai</td>
+                <td>7B</td>
+                <td>int8</td>
+                <td>empty</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>mistralai</td>
+                <td>7B</td>
+                <td>int8</td>
+                <td>where_fr</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>mistralai</td>
+                <td>7B</td>
+                <td>int8</td>
+                <td>gps_fr</td>
+                <td>-</td>
+                <td><a href="shifting_maps_Mistral-7B-v0.1_int8_gps_fr.html">shifting_maps_Mistral-7B-v0.1_int8_gps_fr.html</a></td>
+            </tr>
+            
+            <tr>
+                <td>mistralai</td>
+                <td>7B</td>
+                <td>int8</td>
+                <td>where_en</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>mistralai</td>
+                <td>7B</td>
+                <td>int8</td>
+                <td>gps_en</td>
+                <td>-</td>
+                <td><a href="shifting_maps_Mistral-7B-v0.1_int8_gps_en.html">shifting_maps_Mistral-7B-v0.1_int8_gps_en.html</a></td>
+            </tr>
+            
+            <tr>
+                <td>mistralai</td>
+                <td>7B</td>
+                <td>int4</td>
+                <td>empty</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>mistralai</td>
+                <td>7B</td>
+                <td>int4</td>
+                <td>where_fr</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>mistralai</td>
+                <td>7B</td>
+                <td>int4</td>
+                <td>gps_fr</td>
+                <td>-</td>
+                <td><a href="shifting_maps_Mistral-7B-v0.1_int4_gps_fr.html">shifting_maps_Mistral-7B-v0.1_int4_gps_fr.html</a></td>
+            </tr>
+            
+            <tr>
+                <td>mistralai</td>
+                <td>7B</td>
+                <td>int4</td>
+                <td>where_en</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>mistralai</td>
+                <td>7B</td>
+                <td>int4</td>
+                <td>gps_en</td>
+                <td>-</td>
+                <td><a href="shifting_maps_Mistral-7B-v0.1_int4_gps_en.html">shifting_maps_Mistral-7B-v0.1_int4_gps_en.html</a></td>
+            </tr>
+            
+            <tr>
+                <td>mistralai</td>
+                <td>7B</td>
+                <td>float16</td>
+                <td>empty</td>
+                <td>Instruct</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>mistralai</td>
+                <td>7B</td>
+                <td>float16</td>
+                <td>where_fr</td>
+                <td>Instruct</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>mistralai</td>
+                <td>7B</td>
+                <td>float16</td>
+                <td>gps_fr</td>
+                <td>Instruct</td>
+                <td><a href="shifting_maps_Mistral-7B-Instruct-v0.1_float16_gps_fr.html">shifting_maps_Mistral-7B-Instruct-v0.1_float16_gps_fr.html</a></td>
+            </tr>
+            
+            <tr>
+                <td>mistralai</td>
+                <td>7B</td>
+                <td>float16</td>
+                <td>where_en</td>
+                <td>Instruct</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>mistralai</td>
+                <td>7B</td>
+                <td>float16</td>
+                <td>gps_en</td>
+                <td>Instruct</td>
+                <td><a href="shifting_maps_Mistral-7B-Instruct-v0.1_float16_gps_en.html">shifting_maps_Mistral-7B-Instruct-v0.1_float16_gps_en.html</a></td>
+            </tr>
+            
+            <tr>
+                <td>mistralai</td>
+                <td>7B</td>
+                <td>int8</td>
+                <td>empty</td>
+                <td>Instruct</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>mistralai</td>
+                <td>7B</td>
+                <td>int8</td>
+                <td>where_fr</td>
+                <td>Instruct</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>mistralai</td>
+                <td>7B</td>
+                <td>int8</td>
+                <td>gps_fr</td>
+                <td>Instruct</td>
+                <td><a href="shifting_maps_Mistral-7B-Instruct-v0.1_int8_gps_fr.html">shifting_maps_Mistral-7B-Instruct-v0.1_int8_gps_fr.html</a></td>
+            </tr>
+            
+            <tr>
+                <td>mistralai</td>
+                <td>7B</td>
+                <td>int8</td>
+                <td>where_en</td>
+                <td>Instruct</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>mistralai</td>
+                <td>7B</td>
+                <td>int8</td>
+                <td>gps_en</td>
+                <td>Instruct</td>
+                <td><a href="shifting_maps_Mistral-7B-Instruct-v0.1_int8_gps_en.html">shifting_maps_Mistral-7B-Instruct-v0.1_int8_gps_en.html</a></td>
+            </tr>
+            
+            <tr>
+                <td>mistralai</td>
+                <td>7B</td>
+                <td>int4</td>
+                <td>empty</td>
+                <td>Instruct</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>mistralai</td>
+                <td>7B</td>
+                <td>int4</td>
+                <td>where_fr</td>
+                <td>Instruct</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>mistralai</td>
+                <td>7B</td>
+                <td>int4</td>
+                <td>gps_fr</td>
+                <td>Instruct</td>
+                <td><a href="shifting_maps_Mistral-7B-Instruct-v0.1_int4_gps_fr.html">shifting_maps_Mistral-7B-Instruct-v0.1_int4_gps_fr.html</a></td>
+            </tr>
+            
+            <tr>
+                <td>mistralai</td>
+                <td>7B</td>
+                <td>int4</td>
+                <td>where_en</td>
+                <td>Instruct</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>mistralai</td>
+                <td>7B</td>
+                <td>int4</td>
+                <td>gps_en</td>
+                <td>Instruct</td>
+                <td><a href="shifting_maps_Mistral-7B-Instruct-v0.1_int4_gps_en.html">shifting_maps_Mistral-7B-Instruct-v0.1_int4_gps_en.html</a></td>
+            </tr>
+            
+            <tr>
+                <td>mistralai</td>
+                <td>7B</td>
+                <td>float16</td>
+                <td>empty</td>
+                <td>Instruct</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>mistralai</td>
+                <td>7B</td>
+                <td>float16</td>
+                <td>where_fr</td>
+                <td>Instruct</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>mistralai</td>
+                <td>7B</td>
+                <td>float16</td>
+                <td>gps_fr</td>
+                <td>Instruct</td>
+                <td><a href="shifting_maps_Mistral-7B-Instruct-v0.2_float16_gps_fr.html">shifting_maps_Mistral-7B-Instruct-v0.2_float16_gps_fr.html</a></td>
+            </tr>
+            
+            <tr>
+                <td>mistralai</td>
+                <td>7B</td>
+                <td>float16</td>
+                <td>where_en</td>
+                <td>Instruct</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>mistralai</td>
+                <td>7B</td>
+                <td>float16</td>
+                <td>gps_en</td>
+                <td>Instruct</td>
+                <td><a href="shifting_maps_Mistral-7B-Instruct-v0.2_float16_gps_en.html">shifting_maps_Mistral-7B-Instruct-v0.2_float16_gps_en.html</a></td>
+            </tr>
+            
+            <tr>
+                <td>mistralai</td>
+                <td>7B</td>
+                <td>int8</td>
+                <td>empty</td>
+                <td>Instruct</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>mistralai</td>
+                <td>7B</td>
+                <td>int8</td>
+                <td>where_fr</td>
+                <td>Instruct</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>mistralai</td>
+                <td>7B</td>
+                <td>int8</td>
+                <td>gps_fr</td>
+                <td>Instruct</td>
+                <td><a href="shifting_maps_Mistral-7B-Instruct-v0.2_int8_gps_fr.html">shifting_maps_Mistral-7B-Instruct-v0.2_int8_gps_fr.html</a></td>
+            </tr>
+            
+            <tr>
+                <td>mistralai</td>
+                <td>7B</td>
+                <td>int8</td>
+                <td>where_en</td>
+                <td>Instruct</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>mistralai</td>
+                <td>7B</td>
+                <td>int8</td>
+                <td>gps_en</td>
+                <td>Instruct</td>
+                <td><a href="shifting_maps_Mistral-7B-Instruct-v0.2_int8_gps_en.html">shifting_maps_Mistral-7B-Instruct-v0.2_int8_gps_en.html</a></td>
+            </tr>
+            
+            <tr>
+                <td>mistralai</td>
+                <td>7B</td>
+                <td>int4</td>
+                <td>empty</td>
+                <td>Instruct</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>mistralai</td>
+                <td>7B</td>
+                <td>int4</td>
+                <td>where_fr</td>
+                <td>Instruct</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>mistralai</td>
+                <td>7B</td>
+                <td>int4</td>
+                <td>gps_fr</td>
+                <td>Instruct</td>
+                <td><a href="shifting_maps_Mistral-7B-Instruct-v0.2_int4_gps_fr.html">shifting_maps_Mistral-7B-Instruct-v0.2_int4_gps_fr.html</a></td>
+            </tr>
+            
+            <tr>
+                <td>mistralai</td>
+                <td>7B</td>
+                <td>int4</td>
+                <td>where_en</td>
+                <td>Instruct</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>mistralai</td>
+                <td>7B</td>
+                <td>int4</td>
+                <td>gps_en</td>
+                <td>Instruct</td>
+                <td><a href="shifting_maps_Mistral-7B-Instruct-v0.2_int4_gps_en.html">shifting_maps_Mistral-7B-Instruct-v0.2_int4_gps_en.html</a></td>
+            </tr>
+            
+            <tr>
+                <td>mistralai</td>
+                <td>7B</td>
+                <td>float16</td>
+                <td>empty</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>mistralai</td>
+                <td>7B</td>
+                <td>float16</td>
+                <td>where_fr</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>mistralai</td>
+                <td>7B</td>
+                <td>float16</td>
+                <td>gps_fr</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>mistralai</td>
+                <td>7B</td>
+                <td>float16</td>
+                <td>where_en</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>mistralai</td>
+                <td>7B</td>
+                <td>float16</td>
+                <td>gps_en</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>mistralai</td>
+                <td>7B</td>
+                <td>int8</td>
+                <td>empty</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>mistralai</td>
+                <td>7B</td>
+                <td>int8</td>
+                <td>where_fr</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>mistralai</td>
+                <td>7B</td>
+                <td>int8</td>
+                <td>gps_fr</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>mistralai</td>
+                <td>7B</td>
+                <td>int8</td>
+                <td>where_en</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>mistralai</td>
+                <td>7B</td>
+                <td>int8</td>
+                <td>gps_en</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>mistralai</td>
+                <td>7B</td>
+                <td>int4</td>
+                <td>empty</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>mistralai</td>
+                <td>7B</td>
+                <td>int4</td>
+                <td>where_fr</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>mistralai</td>
+                <td>7B</td>
+                <td>int4</td>
+                <td>gps_fr</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>mistralai</td>
+                <td>7B</td>
+                <td>int4</td>
+                <td>where_en</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>mistralai</td>
+                <td>7B</td>
+                <td>int4</td>
+                <td>gps_en</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>mistralai</td>
+                <td>7B</td>
+                <td>float16</td>
+                <td>empty</td>
+                <td>Instruct</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>mistralai</td>
+                <td>7B</td>
+                <td>float16</td>
+                <td>where_fr</td>
+                <td>Instruct</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>mistralai</td>
+                <td>7B</td>
+                <td>float16</td>
+                <td>gps_fr</td>
+                <td>Instruct</td>
+                <td><a href="shifting_maps_Mistral-7B-Instruct-v0.3_float16_gps_fr.html">shifting_maps_Mistral-7B-Instruct-v0.3_float16_gps_fr.html</a></td>
+            </tr>
+            
+            <tr>
+                <td>mistralai</td>
+                <td>7B</td>
+                <td>float16</td>
+                <td>where_en</td>
+                <td>Instruct</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>mistralai</td>
+                <td>7B</td>
+                <td>float16</td>
+                <td>gps_en</td>
+                <td>Instruct</td>
+                <td><a href="shifting_maps_Mistral-7B-Instruct-v0.3_float16_gps_en.html">shifting_maps_Mistral-7B-Instruct-v0.3_float16_gps_en.html</a></td>
+            </tr>
+            
+            <tr>
+                <td>mistralai</td>
+                <td>7B</td>
+                <td>int8</td>
+                <td>empty</td>
+                <td>Instruct</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>mistralai</td>
+                <td>7B</td>
+                <td>int8</td>
+                <td>where_fr</td>
+                <td>Instruct</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>mistralai</td>
+                <td>7B</td>
+                <td>int8</td>
+                <td>gps_fr</td>
+                <td>Instruct</td>
+                <td><a href="shifting_maps_Mistral-7B-Instruct-v0.3_int8_gps_fr.html">shifting_maps_Mistral-7B-Instruct-v0.3_int8_gps_fr.html</a></td>
+            </tr>
+            
+            <tr>
+                <td>mistralai</td>
+                <td>7B</td>
+                <td>int8</td>
+                <td>where_en</td>
+                <td>Instruct</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>mistralai</td>
+                <td>7B</td>
+                <td>int8</td>
+                <td>gps_en</td>
+                <td>Instruct</td>
+                <td><a href="shifting_maps_Mistral-7B-Instruct-v0.3_int8_gps_en.html">shifting_maps_Mistral-7B-Instruct-v0.3_int8_gps_en.html</a></td>
+            </tr>
+            
+            <tr>
+                <td>mistralai</td>
+                <td>7B</td>
+                <td>int4</td>
+                <td>empty</td>
+                <td>Instruct</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>mistralai</td>
+                <td>7B</td>
+                <td>int4</td>
+                <td>where_fr</td>
+                <td>Instruct</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>mistralai</td>
+                <td>7B</td>
+                <td>int4</td>
+                <td>gps_fr</td>
+                <td>Instruct</td>
+                <td><a href="shifting_maps_Mistral-7B-Instruct-v0.3_int4_gps_fr.html">shifting_maps_Mistral-7B-Instruct-v0.3_int4_gps_fr.html</a></td>
+            </tr>
+            
+            <tr>
+                <td>mistralai</td>
+                <td>7B</td>
+                <td>int4</td>
+                <td>where_en</td>
+                <td>Instruct</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>mistralai</td>
+                <td>7B</td>
+                <td>int4</td>
+                <td>gps_en</td>
+                <td>Instruct</td>
+                <td><a href="shifting_maps_Mistral-7B-Instruct-v0.3_int4_gps_en.html">shifting_maps_Mistral-7B-Instruct-v0.3_int4_gps_en.html</a></td>
+            </tr>
+            
+            <tr>
+                <td>mistralai</td>
+                <td>Small</td>
+                <td>float16</td>
+                <td>empty</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>mistralai</td>
+                <td>Small</td>
+                <td>float16</td>
+                <td>where_fr</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>mistralai</td>
+                <td>Small</td>
+                <td>float16</td>
+                <td>gps_fr</td>
+                <td>-</td>
+                <td><a href="shifting_maps_Mistral-Small-24B-Base-2501_float16_gps_fr.html">shifting_maps_Mistral-Small-24B-Base-2501_float16_gps_fr.html</a></td>
+            </tr>
+            
+            <tr>
+                <td>mistralai</td>
+                <td>Small</td>
+                <td>float16</td>
+                <td>where_en</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>mistralai</td>
+                <td>Small</td>
+                <td>float16</td>
+                <td>gps_en</td>
+                <td>-</td>
+                <td><a href="shifting_maps_Mistral-Small-24B-Base-2501_float16_gps_en.html">shifting_maps_Mistral-Small-24B-Base-2501_float16_gps_en.html</a></td>
+            </tr>
+            
+            <tr>
+                <td>mistralai</td>
+                <td>Small</td>
+                <td>int8</td>
+                <td>empty</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>mistralai</td>
+                <td>Small</td>
+                <td>int8</td>
+                <td>where_fr</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>mistralai</td>
+                <td>Small</td>
+                <td>int8</td>
+                <td>gps_fr</td>
+                <td>-</td>
+                <td><a href="shifting_maps_Mistral-Small-24B-Base-2501_int8_gps_fr.html">shifting_maps_Mistral-Small-24B-Base-2501_int8_gps_fr.html</a></td>
+            </tr>
+            
+            <tr>
+                <td>mistralai</td>
+                <td>Small</td>
+                <td>int8</td>
+                <td>where_en</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>mistralai</td>
+                <td>Small</td>
+                <td>int8</td>
+                <td>gps_en</td>
+                <td>-</td>
+                <td><a href="shifting_maps_Mistral-Small-24B-Base-2501_int8_gps_en.html">shifting_maps_Mistral-Small-24B-Base-2501_int8_gps_en.html</a></td>
+            </tr>
+            
+            <tr>
+                <td>mistralai</td>
+                <td>Small</td>
+                <td>int4</td>
+                <td>empty</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>mistralai</td>
+                <td>Small</td>
+                <td>int4</td>
+                <td>where_fr</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>mistralai</td>
+                <td>Small</td>
+                <td>int4</td>
+                <td>gps_fr</td>
+                <td>-</td>
+                <td><a href="shifting_maps_Mistral-Small-24B-Base-2501_int4_gps_fr.html">shifting_maps_Mistral-Small-24B-Base-2501_int4_gps_fr.html</a></td>
+            </tr>
+            
+            <tr>
+                <td>mistralai</td>
+                <td>Small</td>
+                <td>int4</td>
+                <td>where_en</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>mistralai</td>
+                <td>Small</td>
+                <td>int4</td>
+                <td>gps_en</td>
+                <td>-</td>
+                <td><a href="shifting_maps_Mistral-Small-24B-Base-2501_int4_gps_en.html">shifting_maps_Mistral-Small-24B-Base-2501_int4_gps_en.html</a></td>
+            </tr>
+            
+            <tr>
+                <td>mistralai</td>
+                <td>Small</td>
+                <td>float16</td>
+                <td>empty</td>
+                <td>Instruct</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>mistralai</td>
+                <td>Small</td>
+                <td>float16</td>
+                <td>where_fr</td>
+                <td>Instruct</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>mistralai</td>
+                <td>Small</td>
+                <td>float16</td>
+                <td>gps_fr</td>
+                <td>Instruct</td>
+                <td><a href="shifting_maps_Mistral-Small-24B-Instruct-2501_float16_gps_fr.html">shifting_maps_Mistral-Small-24B-Instruct-2501_float16_gps_fr.html</a></td>
+            </tr>
+            
+            <tr>
+                <td>mistralai</td>
+                <td>Small</td>
+                <td>float16</td>
+                <td>where_en</td>
+                <td>Instruct</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>mistralai</td>
+                <td>Small</td>
+                <td>float16</td>
+                <td>gps_en</td>
+                <td>Instruct</td>
+                <td><a href="shifting_maps_Mistral-Small-24B-Instruct-2501_float16_gps_en.html">shifting_maps_Mistral-Small-24B-Instruct-2501_float16_gps_en.html</a></td>
+            </tr>
+            
+            <tr>
+                <td>mistralai</td>
+                <td>Small</td>
+                <td>int8</td>
+                <td>empty</td>
+                <td>Instruct</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>mistralai</td>
+                <td>Small</td>
+                <td>int8</td>
+                <td>where_fr</td>
+                <td>Instruct</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>mistralai</td>
+                <td>Small</td>
+                <td>int8</td>
+                <td>gps_fr</td>
+                <td>Instruct</td>
+                <td><a href="shifting_maps_Mistral-Small-24B-Instruct-2501_int8_gps_fr.html">shifting_maps_Mistral-Small-24B-Instruct-2501_int8_gps_fr.html</a></td>
+            </tr>
+            
+            <tr>
+                <td>mistralai</td>
+                <td>Small</td>
+                <td>int8</td>
+                <td>where_en</td>
+                <td>Instruct</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>mistralai</td>
+                <td>Small</td>
+                <td>int8</td>
+                <td>gps_en</td>
+                <td>Instruct</td>
+                <td><a href="shifting_maps_Mistral-Small-24B-Instruct-2501_int8_gps_en.html">shifting_maps_Mistral-Small-24B-Instruct-2501_int8_gps_en.html</a></td>
+            </tr>
+            
+            <tr>
+                <td>mistralai</td>
+                <td>Small</td>
+                <td>int4</td>
+                <td>empty</td>
+                <td>Instruct</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>mistralai</td>
+                <td>Small</td>
+                <td>int4</td>
+                <td>where_fr</td>
+                <td>Instruct</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>mistralai</td>
+                <td>Small</td>
+                <td>int4</td>
+                <td>gps_fr</td>
+                <td>Instruct</td>
+                <td><a href="shifting_maps_Mistral-Small-24B-Instruct-2501_int4_gps_fr.html">shifting_maps_Mistral-Small-24B-Instruct-2501_int4_gps_fr.html</a></td>
+            </tr>
+            
+            <tr>
+                <td>mistralai</td>
+                <td>Small</td>
+                <td>int4</td>
+                <td>where_en</td>
+                <td>Instruct</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>mistralai</td>
+                <td>Small</td>
+                <td>int4</td>
+                <td>gps_en</td>
+                <td>Instruct</td>
+                <td><a href="shifting_maps_Mistral-Small-24B-Instruct-2501_int4_gps_en.html">shifting_maps_Mistral-Small-24B-Instruct-2501_int4_gps_en.html</a></td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>3.2</td>
+                <td>float16</td>
+                <td>empty</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>3.2</td>
+                <td>float16</td>
+                <td>where_fr</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>3.2</td>
+                <td>float16</td>
+                <td>gps_fr</td>
+                <td>-</td>
+                <td><a href="shifting_maps_Llama-3.2-1B_float16_gps_fr.html">shifting_maps_Llama-3.2-1B_float16_gps_fr.html</a></td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>3.2</td>
+                <td>float16</td>
+                <td>where_en</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>3.2</td>
+                <td>float16</td>
+                <td>gps_en</td>
+                <td>-</td>
+                <td><a href="shifting_maps_Llama-3.2-1B_float16_gps_en.html">shifting_maps_Llama-3.2-1B_float16_gps_en.html</a></td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>3.2</td>
+                <td>int8</td>
+                <td>empty</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>3.2</td>
+                <td>int8</td>
+                <td>where_fr</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>3.2</td>
+                <td>int8</td>
+                <td>gps_fr</td>
+                <td>-</td>
+                <td><a href="shifting_maps_Llama-3.2-1B_int8_gps_fr.html">shifting_maps_Llama-3.2-1B_int8_gps_fr.html</a></td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>3.2</td>
+                <td>int8</td>
+                <td>where_en</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>3.2</td>
+                <td>int8</td>
+                <td>gps_en</td>
+                <td>-</td>
+                <td><a href="shifting_maps_Llama-3.2-1B_int8_gps_en.html">shifting_maps_Llama-3.2-1B_int8_gps_en.html</a></td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>3.2</td>
+                <td>int4</td>
+                <td>empty</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>3.2</td>
+                <td>int4</td>
+                <td>where_fr</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>3.2</td>
+                <td>int4</td>
+                <td>gps_fr</td>
+                <td>-</td>
+                <td><a href="shifting_maps_Llama-3.2-1B_int4_gps_fr.html">shifting_maps_Llama-3.2-1B_int4_gps_fr.html</a></td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>3.2</td>
+                <td>int4</td>
+                <td>where_en</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>3.2</td>
+                <td>int4</td>
+                <td>gps_en</td>
+                <td>-</td>
+                <td><a href="shifting_maps_Llama-3.2-1B_int4_gps_en.html">shifting_maps_Llama-3.2-1B_int4_gps_en.html</a></td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>3.2</td>
+                <td>float16</td>
+                <td>empty</td>
+                <td>Instruct</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>3.2</td>
+                <td>float16</td>
+                <td>where_fr</td>
+                <td>Instruct</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>3.2</td>
+                <td>float16</td>
+                <td>gps_fr</td>
+                <td>Instruct</td>
+                <td><a href="shifting_maps_Llama-3.2-1B-Instruct_float16_gps_fr.html">shifting_maps_Llama-3.2-1B-Instruct_float16_gps_fr.html</a></td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>3.2</td>
+                <td>float16</td>
+                <td>where_en</td>
+                <td>Instruct</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>3.2</td>
+                <td>float16</td>
+                <td>gps_en</td>
+                <td>Instruct</td>
+                <td><a href="shifting_maps_Llama-3.2-1B-Instruct_float16_gps_en.html">shifting_maps_Llama-3.2-1B-Instruct_float16_gps_en.html</a></td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>3.2</td>
+                <td>int8</td>
+                <td>empty</td>
+                <td>Instruct</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>3.2</td>
+                <td>int8</td>
+                <td>where_fr</td>
+                <td>Instruct</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>3.2</td>
+                <td>int8</td>
+                <td>gps_fr</td>
+                <td>Instruct</td>
+                <td><a href="shifting_maps_Llama-3.2-1B-Instruct_int8_gps_fr.html">shifting_maps_Llama-3.2-1B-Instruct_int8_gps_fr.html</a></td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>3.2</td>
+                <td>int8</td>
+                <td>where_en</td>
+                <td>Instruct</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>3.2</td>
+                <td>int8</td>
+                <td>gps_en</td>
+                <td>Instruct</td>
+                <td><a href="shifting_maps_Llama-3.2-1B-Instruct_int8_gps_en.html">shifting_maps_Llama-3.2-1B-Instruct_int8_gps_en.html</a></td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>3.2</td>
+                <td>int4</td>
+                <td>empty</td>
+                <td>Instruct</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>3.2</td>
+                <td>int4</td>
+                <td>where_fr</td>
+                <td>Instruct</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>3.2</td>
+                <td>int4</td>
+                <td>gps_fr</td>
+                <td>Instruct</td>
+                <td><a href="shifting_maps_Llama-3.2-1B-Instruct_int4_gps_fr.html">shifting_maps_Llama-3.2-1B-Instruct_int4_gps_fr.html</a></td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>3.2</td>
+                <td>int4</td>
+                <td>where_en</td>
+                <td>Instruct</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>3.2</td>
+                <td>int4</td>
+                <td>gps_en</td>
+                <td>Instruct</td>
+                <td><a href="shifting_maps_Llama-3.2-1B-Instruct_int4_gps_en.html">shifting_maps_Llama-3.2-1B-Instruct_int4_gps_en.html</a></td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>3.2</td>
+                <td>float16</td>
+                <td>empty</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>3.2</td>
+                <td>float16</td>
+                <td>where_fr</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>3.2</td>
+                <td>float16</td>
+                <td>gps_fr</td>
+                <td>-</td>
+                <td><a href="shifting_maps_Llama-3.2-3B_float16_gps_fr.html">shifting_maps_Llama-3.2-3B_float16_gps_fr.html</a></td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>3.2</td>
+                <td>float16</td>
+                <td>where_en</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>3.2</td>
+                <td>float16</td>
+                <td>gps_en</td>
+                <td>-</td>
+                <td><a href="shifting_maps_Llama-3.2-3B_float16_gps_en.html">shifting_maps_Llama-3.2-3B_float16_gps_en.html</a></td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>3.2</td>
+                <td>int8</td>
+                <td>empty</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>3.2</td>
+                <td>int8</td>
+                <td>where_fr</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>3.2</td>
+                <td>int8</td>
+                <td>gps_fr</td>
+                <td>-</td>
+                <td><a href="shifting_maps_Llama-3.2-3B_int8_gps_fr.html">shifting_maps_Llama-3.2-3B_int8_gps_fr.html</a></td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>3.2</td>
+                <td>int8</td>
+                <td>where_en</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>3.2</td>
+                <td>int8</td>
+                <td>gps_en</td>
+                <td>-</td>
+                <td><a href="shifting_maps_Llama-3.2-3B_int8_gps_en.html">shifting_maps_Llama-3.2-3B_int8_gps_en.html</a></td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>3.2</td>
+                <td>int4</td>
+                <td>empty</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>3.2</td>
+                <td>int4</td>
+                <td>where_fr</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>3.2</td>
+                <td>int4</td>
+                <td>gps_fr</td>
+                <td>-</td>
+                <td><a href="shifting_maps_Llama-3.2-3B_int4_gps_fr.html">shifting_maps_Llama-3.2-3B_int4_gps_fr.html</a></td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>3.2</td>
+                <td>int4</td>
+                <td>where_en</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>3.2</td>
+                <td>int4</td>
+                <td>gps_en</td>
+                <td>-</td>
+                <td><a href="shifting_maps_Llama-3.2-3B_int4_gps_en.html">shifting_maps_Llama-3.2-3B_int4_gps_en.html</a></td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>3.2</td>
+                <td>float16</td>
+                <td>empty</td>
+                <td>Instruct</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>3.2</td>
+                <td>float16</td>
+                <td>where_fr</td>
+                <td>Instruct</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>3.2</td>
+                <td>float16</td>
+                <td>gps_fr</td>
+                <td>Instruct</td>
+                <td><a href="shifting_maps_Llama-3.2-3B-Instruct_float16_gps_fr.html">shifting_maps_Llama-3.2-3B-Instruct_float16_gps_fr.html</a></td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>3.2</td>
+                <td>float16</td>
+                <td>where_en</td>
+                <td>Instruct</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>3.2</td>
+                <td>float16</td>
+                <td>gps_en</td>
+                <td>Instruct</td>
+                <td><a href="shifting_maps_Llama-3.2-3B-Instruct_float16_gps_en.html">shifting_maps_Llama-3.2-3B-Instruct_float16_gps_en.html</a></td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>3.2</td>
+                <td>int8</td>
+                <td>empty</td>
+                <td>Instruct</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>3.2</td>
+                <td>int8</td>
+                <td>where_fr</td>
+                <td>Instruct</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>3.2</td>
+                <td>int8</td>
+                <td>gps_fr</td>
+                <td>Instruct</td>
+                <td><a href="shifting_maps_Llama-3.2-3B-Instruct_int8_gps_fr.html">shifting_maps_Llama-3.2-3B-Instruct_int8_gps_fr.html</a></td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>3.2</td>
+                <td>int8</td>
+                <td>where_en</td>
+                <td>Instruct</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>3.2</td>
+                <td>int8</td>
+                <td>gps_en</td>
+                <td>Instruct</td>
+                <td><a href="shifting_maps_Llama-3.2-3B-Instruct_int8_gps_en.html">shifting_maps_Llama-3.2-3B-Instruct_int8_gps_en.html</a></td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>3.2</td>
+                <td>int4</td>
+                <td>empty</td>
+                <td>Instruct</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>3.2</td>
+                <td>int4</td>
+                <td>where_fr</td>
+                <td>Instruct</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>3.2</td>
+                <td>int4</td>
+                <td>gps_fr</td>
+                <td>Instruct</td>
+                <td><a href="shifting_maps_Llama-3.2-3B-Instruct_int4_gps_fr.html">shifting_maps_Llama-3.2-3B-Instruct_int4_gps_fr.html</a></td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>3.2</td>
+                <td>int4</td>
+                <td>where_en</td>
+                <td>Instruct</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>3.2</td>
+                <td>int4</td>
+                <td>gps_en</td>
+                <td>Instruct</td>
+                <td><a href="shifting_maps_Llama-3.2-3B-Instruct_int4_gps_en.html">shifting_maps_Llama-3.2-3B-Instruct_int4_gps_en.html</a></td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>3.1</td>
+                <td>float16</td>
+                <td>empty</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>3.1</td>
+                <td>float16</td>
+                <td>where_fr</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>3.1</td>
+                <td>float16</td>
+                <td>gps_fr</td>
+                <td>-</td>
+                <td><a href="shifting_maps_Llama-3.1-8B_float16_gps_fr.html">shifting_maps_Llama-3.1-8B_float16_gps_fr.html</a></td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>3.1</td>
+                <td>float16</td>
+                <td>where_en</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>3.1</td>
+                <td>float16</td>
+                <td>gps_en</td>
+                <td>-</td>
+                <td><a href="shifting_maps_Llama-3.1-8B_float16_gps_en.html">shifting_maps_Llama-3.1-8B_float16_gps_en.html</a></td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>3.1</td>
+                <td>int8</td>
+                <td>empty</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>3.1</td>
+                <td>int8</td>
+                <td>where_fr</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>3.1</td>
+                <td>int8</td>
+                <td>gps_fr</td>
+                <td>-</td>
+                <td><a href="shifting_maps_Llama-3.1-8B_int8_gps_fr.html">shifting_maps_Llama-3.1-8B_int8_gps_fr.html</a></td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>3.1</td>
+                <td>int8</td>
+                <td>where_en</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>3.1</td>
+                <td>int8</td>
+                <td>gps_en</td>
+                <td>-</td>
+                <td><a href="shifting_maps_Llama-3.1-8B_int8_gps_en.html">shifting_maps_Llama-3.1-8B_int8_gps_en.html</a></td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>3.1</td>
+                <td>int4</td>
+                <td>empty</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>3.1</td>
+                <td>int4</td>
+                <td>where_fr</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>3.1</td>
+                <td>int4</td>
+                <td>gps_fr</td>
+                <td>-</td>
+                <td><a href="shifting_maps_Llama-3.1-8B_int4_gps_fr.html">shifting_maps_Llama-3.1-8B_int4_gps_fr.html</a></td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>3.1</td>
+                <td>int4</td>
+                <td>where_en</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>3.1</td>
+                <td>int4</td>
+                <td>gps_en</td>
+                <td>-</td>
+                <td><a href="shifting_maps_Llama-3.1-8B_int4_gps_en.html">shifting_maps_Llama-3.1-8B_int4_gps_en.html</a></td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>3.1</td>
+                <td>float16</td>
+                <td>empty</td>
+                <td>Instruct</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>3.1</td>
+                <td>float16</td>
+                <td>where_fr</td>
+                <td>Instruct</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>3.1</td>
+                <td>float16</td>
+                <td>gps_fr</td>
+                <td>Instruct</td>
+                <td><a href="shifting_maps_Llama-3.1-8B-Instruct_float16_gps_fr.html">shifting_maps_Llama-3.1-8B-Instruct_float16_gps_fr.html</a></td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>3.1</td>
+                <td>float16</td>
+                <td>where_en</td>
+                <td>Instruct</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>3.1</td>
+                <td>float16</td>
+                <td>gps_en</td>
+                <td>Instruct</td>
+                <td><a href="shifting_maps_Llama-3.1-8B-Instruct_float16_gps_en.html">shifting_maps_Llama-3.1-8B-Instruct_float16_gps_en.html</a></td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>3.1</td>
+                <td>int8</td>
+                <td>empty</td>
+                <td>Instruct</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>3.1</td>
+                <td>int8</td>
+                <td>where_fr</td>
+                <td>Instruct</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>3.1</td>
+                <td>int8</td>
+                <td>gps_fr</td>
+                <td>Instruct</td>
+                <td><a href="shifting_maps_Llama-3.1-8B-Instruct_int8_gps_fr.html">shifting_maps_Llama-3.1-8B-Instruct_int8_gps_fr.html</a></td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>3.1</td>
+                <td>int8</td>
+                <td>where_en</td>
+                <td>Instruct</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>3.1</td>
+                <td>int8</td>
+                <td>gps_en</td>
+                <td>Instruct</td>
+                <td><a href="shifting_maps_Llama-3.1-8B-Instruct_int8_gps_en.html">shifting_maps_Llama-3.1-8B-Instruct_int8_gps_en.html</a></td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>3.1</td>
+                <td>int4</td>
+                <td>empty</td>
+                <td>Instruct</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>3.1</td>
+                <td>int4</td>
+                <td>where_fr</td>
+                <td>Instruct</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>3.1</td>
+                <td>int4</td>
+                <td>gps_fr</td>
+                <td>Instruct</td>
+                <td><a href="shifting_maps_Llama-3.1-8B-Instruct_int4_gps_fr.html">shifting_maps_Llama-3.1-8B-Instruct_int4_gps_fr.html</a></td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>3.1</td>
+                <td>int4</td>
+                <td>where_en</td>
+                <td>Instruct</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>3.1</td>
+                <td>int4</td>
+                <td>gps_en</td>
+                <td>Instruct</td>
+                <td><a href="shifting_maps_Llama-3.1-8B-Instruct_int4_gps_en.html">shifting_maps_Llama-3.1-8B-Instruct_int4_gps_en.html</a></td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>2</td>
+                <td>float16</td>
+                <td>empty</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>2</td>
+                <td>float16</td>
+                <td>where_fr</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>2</td>
+                <td>float16</td>
+                <td>gps_fr</td>
+                <td>-</td>
+                <td><a href="shifting_maps_Llama-2-7b-hf_float16_gps_fr.html">shifting_maps_Llama-2-7b-hf_float16_gps_fr.html</a></td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>2</td>
+                <td>float16</td>
+                <td>where_en</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>2</td>
+                <td>float16</td>
+                <td>gps_en</td>
+                <td>-</td>
+                <td><a href="shifting_maps_Llama-2-7b-hf_float16_gps_en.html">shifting_maps_Llama-2-7b-hf_float16_gps_en.html</a></td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>2</td>
+                <td>int8</td>
+                <td>empty</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>2</td>
+                <td>int8</td>
+                <td>where_fr</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>2</td>
+                <td>int8</td>
+                <td>gps_fr</td>
+                <td>-</td>
+                <td><a href="shifting_maps_Llama-2-7b-hf_int8_gps_fr.html">shifting_maps_Llama-2-7b-hf_int8_gps_fr.html</a></td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>2</td>
+                <td>int8</td>
+                <td>where_en</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>2</td>
+                <td>int8</td>
+                <td>gps_en</td>
+                <td>-</td>
+                <td><a href="shifting_maps_Llama-2-7b-hf_int8_gps_en.html">shifting_maps_Llama-2-7b-hf_int8_gps_en.html</a></td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>2</td>
+                <td>int4</td>
+                <td>empty</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>2</td>
+                <td>int4</td>
+                <td>where_fr</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>2</td>
+                <td>int4</td>
+                <td>gps_fr</td>
+                <td>-</td>
+                <td><a href="shifting_maps_Llama-2-7b-hf_int4_gps_fr.html">shifting_maps_Llama-2-7b-hf_int4_gps_fr.html</a></td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>2</td>
+                <td>int4</td>
+                <td>where_en</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>2</td>
+                <td>int4</td>
+                <td>gps_en</td>
+                <td>-</td>
+                <td><a href="shifting_maps_Llama-2-7b-hf_int4_gps_en.html">shifting_maps_Llama-2-7b-hf_int4_gps_en.html</a></td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>2</td>
+                <td>float16</td>
+                <td>empty</td>
+                <td>Chat</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>2</td>
+                <td>float16</td>
+                <td>where_fr</td>
+                <td>Chat</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>2</td>
+                <td>float16</td>
+                <td>gps_fr</td>
+                <td>Chat</td>
+                <td><a href="shifting_maps_Llama-2-7b-chat-hf_float16_gps_fr.html">shifting_maps_Llama-2-7b-chat-hf_float16_gps_fr.html</a></td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>2</td>
+                <td>float16</td>
+                <td>where_en</td>
+                <td>Chat</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>2</td>
+                <td>float16</td>
+                <td>gps_en</td>
+                <td>Chat</td>
+                <td><a href="shifting_maps_Llama-2-7b-chat-hf_float16_gps_en.html">shifting_maps_Llama-2-7b-chat-hf_float16_gps_en.html</a></td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>2</td>
+                <td>int8</td>
+                <td>empty</td>
+                <td>Chat</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>2</td>
+                <td>int8</td>
+                <td>where_fr</td>
+                <td>Chat</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>2</td>
+                <td>int8</td>
+                <td>gps_fr</td>
+                <td>Chat</td>
+                <td><a href="shifting_maps_Llama-2-7b-chat-hf_int8_gps_fr.html">shifting_maps_Llama-2-7b-chat-hf_int8_gps_fr.html</a></td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>2</td>
+                <td>int8</td>
+                <td>where_en</td>
+                <td>Chat</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>2</td>
+                <td>int8</td>
+                <td>gps_en</td>
+                <td>Chat</td>
+                <td><a href="shifting_maps_Llama-2-7b-chat-hf_int8_gps_en.html">shifting_maps_Llama-2-7b-chat-hf_int8_gps_en.html</a></td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>2</td>
+                <td>int4</td>
+                <td>empty</td>
+                <td>Chat</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>2</td>
+                <td>int4</td>
+                <td>where_fr</td>
+                <td>Chat</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>2</td>
+                <td>int4</td>
+                <td>gps_fr</td>
+                <td>Chat</td>
+                <td><a href="shifting_maps_Llama-2-7b-chat-hf_int4_gps_fr.html">shifting_maps_Llama-2-7b-chat-hf_int4_gps_fr.html</a></td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>2</td>
+                <td>int4</td>
+                <td>where_en</td>
+                <td>Chat</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>2</td>
+                <td>int4</td>
+                <td>gps_en</td>
+                <td>Chat</td>
+                <td><a href="shifting_maps_Llama-2-7b-chat-hf_int4_gps_en.html">shifting_maps_Llama-2-7b-chat-hf_int4_gps_en.html</a></td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>2</td>
+                <td>float16</td>
+                <td>empty</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>2</td>
+                <td>float16</td>
+                <td>where_fr</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>2</td>
+                <td>float16</td>
+                <td>gps_fr</td>
+                <td>-</td>
+                <td><a href="shifting_maps_Llama-2-13b-hf_float16_gps_fr.html">shifting_maps_Llama-2-13b-hf_float16_gps_fr.html</a></td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>2</td>
+                <td>float16</td>
+                <td>where_en</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>2</td>
+                <td>float16</td>
+                <td>gps_en</td>
+                <td>-</td>
+                <td><a href="shifting_maps_Llama-2-13b-hf_float16_gps_en.html">shifting_maps_Llama-2-13b-hf_float16_gps_en.html</a></td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>2</td>
+                <td>int8</td>
+                <td>empty</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>2</td>
+                <td>int8</td>
+                <td>where_fr</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>2</td>
+                <td>int8</td>
+                <td>gps_fr</td>
+                <td>-</td>
+                <td><a href="shifting_maps_Llama-2-13b-hf_int8_gps_fr.html">shifting_maps_Llama-2-13b-hf_int8_gps_fr.html</a></td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>2</td>
+                <td>int8</td>
+                <td>where_en</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>2</td>
+                <td>int8</td>
+                <td>gps_en</td>
+                <td>-</td>
+                <td><a href="shifting_maps_Llama-2-13b-hf_int8_gps_en.html">shifting_maps_Llama-2-13b-hf_int8_gps_en.html</a></td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>2</td>
+                <td>int4</td>
+                <td>empty</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>2</td>
+                <td>int4</td>
+                <td>where_fr</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>2</td>
+                <td>int4</td>
+                <td>gps_fr</td>
+                <td>-</td>
+                <td><a href="shifting_maps_Llama-2-13b-hf_int4_gps_fr.html">shifting_maps_Llama-2-13b-hf_int4_gps_fr.html</a></td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>2</td>
+                <td>int4</td>
+                <td>where_en</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>2</td>
+                <td>int4</td>
+                <td>gps_en</td>
+                <td>-</td>
+                <td><a href="shifting_maps_Llama-2-13b-hf_int4_gps_en.html">shifting_maps_Llama-2-13b-hf_int4_gps_en.html</a></td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>2</td>
+                <td>float16</td>
+                <td>empty</td>
+                <td>Chat</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>2</td>
+                <td>float16</td>
+                <td>where_fr</td>
+                <td>Chat</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>2</td>
+                <td>float16</td>
+                <td>gps_fr</td>
+                <td>Chat</td>
+                <td><a href="shifting_maps_Llama-2-13b-chat-hf_float16_gps_fr.html">shifting_maps_Llama-2-13b-chat-hf_float16_gps_fr.html</a></td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>2</td>
+                <td>float16</td>
+                <td>where_en</td>
+                <td>Chat</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>2</td>
+                <td>float16</td>
+                <td>gps_en</td>
+                <td>Chat</td>
+                <td><a href="shifting_maps_Llama-2-13b-chat-hf_float16_gps_en.html">shifting_maps_Llama-2-13b-chat-hf_float16_gps_en.html</a></td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>2</td>
+                <td>int8</td>
+                <td>empty</td>
+                <td>Chat</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>2</td>
+                <td>int8</td>
+                <td>where_fr</td>
+                <td>Chat</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>2</td>
+                <td>int8</td>
+                <td>gps_fr</td>
+                <td>Chat</td>
+                <td><a href="shifting_maps_Llama-2-13b-chat-hf_int8_gps_fr.html">shifting_maps_Llama-2-13b-chat-hf_int8_gps_fr.html</a></td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>2</td>
+                <td>int8</td>
+                <td>where_en</td>
+                <td>Chat</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>2</td>
+                <td>int8</td>
+                <td>gps_en</td>
+                <td>Chat</td>
+                <td><a href="shifting_maps_Llama-2-13b-chat-hf_int8_gps_en.html">shifting_maps_Llama-2-13b-chat-hf_int8_gps_en.html</a></td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>2</td>
+                <td>int4</td>
+                <td>empty</td>
+                <td>Chat</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>2</td>
+                <td>int4</td>
+                <td>where_fr</td>
+                <td>Chat</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>2</td>
+                <td>int4</td>
+                <td>gps_fr</td>
+                <td>Chat</td>
+                <td><a href="shifting_maps_Llama-2-13b-chat-hf_int4_gps_fr.html">shifting_maps_Llama-2-13b-chat-hf_int4_gps_fr.html</a></td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>2</td>
+                <td>int4</td>
+                <td>where_en</td>
+                <td>Chat</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>2</td>
+                <td>int4</td>
+                <td>gps_en</td>
+                <td>Chat</td>
+                <td><a href="shifting_maps_Llama-2-13b-chat-hf_int4_gps_en.html">shifting_maps_Llama-2-13b-chat-hf_int4_gps_en.html</a></td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>3.1</td>
+                <td>float16</td>
+                <td>empty</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>3.1</td>
+                <td>float16</td>
+                <td>where_fr</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>3.1</td>
+                <td>float16</td>
+                <td>gps_fr</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>3.1</td>
+                <td>float16</td>
+                <td>where_en</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>3.1</td>
+                <td>float16</td>
+                <td>gps_en</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>3.1</td>
+                <td>int8</td>
+                <td>empty</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>3.1</td>
+                <td>int8</td>
+                <td>where_fr</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>3.1</td>
+                <td>int8</td>
+                <td>gps_fr</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>3.1</td>
+                <td>int8</td>
+                <td>where_en</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>3.1</td>
+                <td>int8</td>
+                <td>gps_en</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>3.1</td>
+                <td>int4</td>
+                <td>empty</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>3.1</td>
+                <td>int4</td>
+                <td>where_fr</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>3.1</td>
+                <td>int4</td>
+                <td>gps_fr</td>
+                <td>-</td>
+                <td><a href="shifting_maps_Llama-3.1-70B_int4_gps_fr.html">shifting_maps_Llama-3.1-70B_int4_gps_fr.html</a></td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>3.1</td>
+                <td>int4</td>
+                <td>where_en</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>3.1</td>
+                <td>int4</td>
+                <td>gps_en</td>
+                <td>-</td>
+                <td><a href="shifting_maps_Llama-3.1-70B_int4_gps_en.html">shifting_maps_Llama-3.1-70B_int4_gps_en.html</a></td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>3.1</td>
+                <td>float16</td>
+                <td>empty</td>
+                <td>Instruct</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>3.1</td>
+                <td>float16</td>
+                <td>where_fr</td>
+                <td>Instruct</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>3.1</td>
+                <td>float16</td>
+                <td>gps_fr</td>
+                <td>Instruct</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>3.1</td>
+                <td>float16</td>
+                <td>where_en</td>
+                <td>Instruct</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>3.1</td>
+                <td>float16</td>
+                <td>gps_en</td>
+                <td>Instruct</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>3.1</td>
+                <td>int8</td>
+                <td>empty</td>
+                <td>Instruct</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>3.1</td>
+                <td>int8</td>
+                <td>where_fr</td>
+                <td>Instruct</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>3.1</td>
+                <td>int8</td>
+                <td>gps_fr</td>
+                <td>Instruct</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>3.1</td>
+                <td>int8</td>
+                <td>where_en</td>
+                <td>Instruct</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>3.1</td>
+                <td>int8</td>
+                <td>gps_en</td>
+                <td>Instruct</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>3.1</td>
+                <td>int4</td>
+                <td>empty</td>
+                <td>Instruct</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>3.1</td>
+                <td>int4</td>
+                <td>where_fr</td>
+                <td>Instruct</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>3.1</td>
+                <td>int4</td>
+                <td>gps_fr</td>
+                <td>Instruct</td>
+                <td><a href="shifting_maps_Llama-3.1-70B-Instruct_int4_gps_fr.html">shifting_maps_Llama-3.1-70B-Instruct_int4_gps_fr.html</a></td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>3.1</td>
+                <td>int4</td>
+                <td>where_en</td>
+                <td>Instruct</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>meta-llama</td>
+                <td>3.1</td>
+                <td>int4</td>
+                <td>gps_en</td>
+                <td>Instruct</td>
+                <td><a href="shifting_maps_Llama-3.1-70B-Instruct_int4_gps_en.html">shifting_maps_Llama-3.1-70B-Instruct_int4_gps_en.html</a></td>
+            </tr>
+            
+            <tr>
+                <td>Qwen</td>
+                <td></td>
+                <td>float16</td>
+                <td>empty</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>Qwen</td>
+                <td></td>
+                <td>float16</td>
+                <td>where_fr</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>Qwen</td>
+                <td></td>
+                <td>float16</td>
+                <td>gps_fr</td>
+                <td>-</td>
+                <td><a href="shifting_maps_Qwen2.5-0.5B_float16_gps_fr.html">shifting_maps_Qwen2.5-0.5B_float16_gps_fr.html</a></td>
+            </tr>
+            
+            <tr>
+                <td>Qwen</td>
+                <td></td>
+                <td>float16</td>
+                <td>where_en</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>Qwen</td>
+                <td></td>
+                <td>float16</td>
+                <td>gps_en</td>
+                <td>-</td>
+                <td><a href="shifting_maps_Qwen2.5-0.5B_float16_gps_en.html">shifting_maps_Qwen2.5-0.5B_float16_gps_en.html</a></td>
+            </tr>
+            
+            <tr>
+                <td>Qwen</td>
+                <td></td>
+                <td>int8</td>
+                <td>empty</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>Qwen</td>
+                <td></td>
+                <td>int8</td>
+                <td>where_fr</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>Qwen</td>
+                <td></td>
+                <td>int8</td>
+                <td>gps_fr</td>
+                <td>-</td>
+                <td><a href="shifting_maps_Qwen2.5-0.5B_int8_gps_fr.html">shifting_maps_Qwen2.5-0.5B_int8_gps_fr.html</a></td>
+            </tr>
+            
+            <tr>
+                <td>Qwen</td>
+                <td></td>
+                <td>int8</td>
+                <td>where_en</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>Qwen</td>
+                <td></td>
+                <td>int8</td>
+                <td>gps_en</td>
+                <td>-</td>
+                <td><a href="shifting_maps_Qwen2.5-0.5B_int8_gps_en.html">shifting_maps_Qwen2.5-0.5B_int8_gps_en.html</a></td>
+            </tr>
+            
+            <tr>
+                <td>Qwen</td>
+                <td></td>
+                <td>int4</td>
+                <td>empty</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>Qwen</td>
+                <td></td>
+                <td>int4</td>
+                <td>where_fr</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>Qwen</td>
+                <td></td>
+                <td>int4</td>
+                <td>gps_fr</td>
+                <td>-</td>
+                <td><a href="shifting_maps_Qwen2.5-0.5B_int4_gps_fr.html">shifting_maps_Qwen2.5-0.5B_int4_gps_fr.html</a></td>
+            </tr>
+            
+            <tr>
+                <td>Qwen</td>
+                <td></td>
+                <td>int4</td>
+                <td>where_en</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>Qwen</td>
+                <td></td>
+                <td>int4</td>
+                <td>gps_en</td>
+                <td>-</td>
+                <td><a href="shifting_maps_Qwen2.5-0.5B_int4_gps_en.html">shifting_maps_Qwen2.5-0.5B_int4_gps_en.html</a></td>
+            </tr>
+            
+            <tr>
+                <td>Qwen</td>
+                <td></td>
+                <td>float16</td>
+                <td>empty</td>
+                <td>Instruct</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>Qwen</td>
+                <td></td>
+                <td>float16</td>
+                <td>where_fr</td>
+                <td>Instruct</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>Qwen</td>
+                <td></td>
+                <td>float16</td>
+                <td>gps_fr</td>
+                <td>Instruct</td>
+                <td><a href="shifting_maps_Qwen2.5-0.5B-Instruct_float16_gps_fr.html">shifting_maps_Qwen2.5-0.5B-Instruct_float16_gps_fr.html</a></td>
+            </tr>
+            
+            <tr>
+                <td>Qwen</td>
+                <td></td>
+                <td>float16</td>
+                <td>where_en</td>
+                <td>Instruct</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>Qwen</td>
+                <td></td>
+                <td>float16</td>
+                <td>gps_en</td>
+                <td>Instruct</td>
+                <td><a href="shifting_maps_Qwen2.5-0.5B-Instruct_float16_gps_en.html">shifting_maps_Qwen2.5-0.5B-Instruct_float16_gps_en.html</a></td>
+            </tr>
+            
+            <tr>
+                <td>Qwen</td>
+                <td></td>
+                <td>int8</td>
+                <td>empty</td>
+                <td>Instruct</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>Qwen</td>
+                <td></td>
+                <td>int8</td>
+                <td>where_fr</td>
+                <td>Instruct</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>Qwen</td>
+                <td></td>
+                <td>int8</td>
+                <td>gps_fr</td>
+                <td>Instruct</td>
+                <td><a href="shifting_maps_Qwen2.5-0.5B-Instruct_int8_gps_fr.html">shifting_maps_Qwen2.5-0.5B-Instruct_int8_gps_fr.html</a></td>
+            </tr>
+            
+            <tr>
+                <td>Qwen</td>
+                <td></td>
+                <td>int8</td>
+                <td>where_en</td>
+                <td>Instruct</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>Qwen</td>
+                <td></td>
+                <td>int8</td>
+                <td>gps_en</td>
+                <td>Instruct</td>
+                <td><a href="shifting_maps_Qwen2.5-0.5B-Instruct_int8_gps_en.html">shifting_maps_Qwen2.5-0.5B-Instruct_int8_gps_en.html</a></td>
+            </tr>
+            
+            <tr>
+                <td>Qwen</td>
+                <td></td>
+                <td>int4</td>
+                <td>empty</td>
+                <td>Instruct</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>Qwen</td>
+                <td></td>
+                <td>int4</td>
+                <td>where_fr</td>
+                <td>Instruct</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>Qwen</td>
+                <td></td>
+                <td>int4</td>
+                <td>gps_fr</td>
+                <td>Instruct</td>
+                <td><a href="shifting_maps_Qwen2.5-0.5B-Instruct_int4_gps_fr.html">shifting_maps_Qwen2.5-0.5B-Instruct_int4_gps_fr.html</a></td>
+            </tr>
+            
+            <tr>
+                <td>Qwen</td>
+                <td></td>
+                <td>int4</td>
+                <td>where_en</td>
+                <td>Instruct</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>Qwen</td>
+                <td></td>
+                <td>int4</td>
+                <td>gps_en</td>
+                <td>Instruct</td>
+                <td><a href="shifting_maps_Qwen2.5-0.5B-Instruct_int4_gps_en.html">shifting_maps_Qwen2.5-0.5B-Instruct_int4_gps_en.html</a></td>
+            </tr>
+            
+            <tr>
+                <td>Qwen</td>
+                <td></td>
+                <td>float16</td>
+                <td>empty</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>Qwen</td>
+                <td></td>
+                <td>float16</td>
+                <td>where_fr</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>Qwen</td>
+                <td></td>
+                <td>float16</td>
+                <td>gps_fr</td>
+                <td>-</td>
+                <td><a href="shifting_maps_Qwen2.5-7B_float16_gps_fr.html">shifting_maps_Qwen2.5-7B_float16_gps_fr.html</a></td>
+            </tr>
+            
+            <tr>
+                <td>Qwen</td>
+                <td></td>
+                <td>float16</td>
+                <td>where_en</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>Qwen</td>
+                <td></td>
+                <td>float16</td>
+                <td>gps_en</td>
+                <td>-</td>
+                <td><a href="shifting_maps_Qwen2.5-7B_float16_gps_en.html">shifting_maps_Qwen2.5-7B_float16_gps_en.html</a></td>
+            </tr>
+            
+            <tr>
+                <td>Qwen</td>
+                <td></td>
+                <td>int8</td>
+                <td>empty</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>Qwen</td>
+                <td></td>
+                <td>int8</td>
+                <td>where_fr</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>Qwen</td>
+                <td></td>
+                <td>int8</td>
+                <td>gps_fr</td>
+                <td>-</td>
+                <td><a href="shifting_maps_Qwen2.5-7B_int8_gps_fr.html">shifting_maps_Qwen2.5-7B_int8_gps_fr.html</a></td>
+            </tr>
+            
+            <tr>
+                <td>Qwen</td>
+                <td></td>
+                <td>int8</td>
+                <td>where_en</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>Qwen</td>
+                <td></td>
+                <td>int8</td>
+                <td>gps_en</td>
+                <td>-</td>
+                <td><a href="shifting_maps_Qwen2.5-7B_int8_gps_en.html">shifting_maps_Qwen2.5-7B_int8_gps_en.html</a></td>
+            </tr>
+            
+            <tr>
+                <td>Qwen</td>
+                <td></td>
+                <td>int4</td>
+                <td>empty</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>Qwen</td>
+                <td></td>
+                <td>int4</td>
+                <td>where_fr</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>Qwen</td>
+                <td></td>
+                <td>int4</td>
+                <td>gps_fr</td>
+                <td>-</td>
+                <td><a href="shifting_maps_Qwen2.5-7B_int4_gps_fr.html">shifting_maps_Qwen2.5-7B_int4_gps_fr.html</a></td>
+            </tr>
+            
+            <tr>
+                <td>Qwen</td>
+                <td></td>
+                <td>int4</td>
+                <td>where_en</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>Qwen</td>
+                <td></td>
+                <td>int4</td>
+                <td>gps_en</td>
+                <td>-</td>
+                <td><a href="shifting_maps_Qwen2.5-7B_int4_gps_en.html">shifting_maps_Qwen2.5-7B_int4_gps_en.html</a></td>
+            </tr>
+            
+            <tr>
+                <td>Qwen</td>
+                <td></td>
+                <td>float16</td>
+                <td>empty</td>
+                <td>Instruct</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>Qwen</td>
+                <td></td>
+                <td>float16</td>
+                <td>where_fr</td>
+                <td>Instruct</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>Qwen</td>
+                <td></td>
+                <td>float16</td>
+                <td>gps_fr</td>
+                <td>Instruct</td>
+                <td><a href="shifting_maps_Qwen2.5-7B-Instruct_float16_gps_fr.html">shifting_maps_Qwen2.5-7B-Instruct_float16_gps_fr.html</a></td>
+            </tr>
+            
+            <tr>
+                <td>Qwen</td>
+                <td></td>
+                <td>float16</td>
+                <td>where_en</td>
+                <td>Instruct</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>Qwen</td>
+                <td></td>
+                <td>float16</td>
+                <td>gps_en</td>
+                <td>Instruct</td>
+                <td><a href="shifting_maps_Qwen2.5-7B-Instruct_float16_gps_en.html">shifting_maps_Qwen2.5-7B-Instruct_float16_gps_en.html</a></td>
+            </tr>
+            
+            <tr>
+                <td>Qwen</td>
+                <td></td>
+                <td>int8</td>
+                <td>empty</td>
+                <td>Instruct</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>Qwen</td>
+                <td></td>
+                <td>int8</td>
+                <td>where_fr</td>
+                <td>Instruct</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>Qwen</td>
+                <td></td>
+                <td>int8</td>
+                <td>gps_fr</td>
+                <td>Instruct</td>
+                <td><a href="shifting_maps_Qwen2.5-7B-Instruct_int8_gps_fr.html">shifting_maps_Qwen2.5-7B-Instruct_int8_gps_fr.html</a></td>
+            </tr>
+            
+            <tr>
+                <td>Qwen</td>
+                <td></td>
+                <td>int8</td>
+                <td>where_en</td>
+                <td>Instruct</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>Qwen</td>
+                <td></td>
+                <td>int8</td>
+                <td>gps_en</td>
+                <td>Instruct</td>
+                <td><a href="shifting_maps_Qwen2.5-7B-Instruct_int8_gps_en.html">shifting_maps_Qwen2.5-7B-Instruct_int8_gps_en.html</a></td>
+            </tr>
+            
+            <tr>
+                <td>Qwen</td>
+                <td></td>
+                <td>int4</td>
+                <td>empty</td>
+                <td>Instruct</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>Qwen</td>
+                <td></td>
+                <td>int4</td>
+                <td>where_fr</td>
+                <td>Instruct</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>Qwen</td>
+                <td></td>
+                <td>int4</td>
+                <td>gps_fr</td>
+                <td>Instruct</td>
+                <td><a href="shifting_maps_Qwen2.5-7B-Instruct_int4_gps_fr.html">shifting_maps_Qwen2.5-7B-Instruct_int4_gps_fr.html</a></td>
+            </tr>
+            
+            <tr>
+                <td>Qwen</td>
+                <td></td>
+                <td>int4</td>
+                <td>where_en</td>
+                <td>Instruct</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>Qwen</td>
+                <td></td>
+                <td>int4</td>
+                <td>gps_en</td>
+                <td>Instruct</td>
+                <td><a href="shifting_maps_Qwen2.5-7B-Instruct_int4_gps_en.html">shifting_maps_Qwen2.5-7B-Instruct_int4_gps_en.html</a></td>
+            </tr>
+            
+            <tr>
+                <td>Qwen</td>
+                <td></td>
+                <td>float16</td>
+                <td>empty</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>Qwen</td>
+                <td></td>
+                <td>float16</td>
+                <td>where_fr</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>Qwen</td>
+                <td></td>
+                <td>float16</td>
+                <td>gps_fr</td>
+                <td>-</td>
+                <td><a href="shifting_maps_Qwen2.5-14B_float16_gps_fr.html">shifting_maps_Qwen2.5-14B_float16_gps_fr.html</a></td>
+            </tr>
+            
+            <tr>
+                <td>Qwen</td>
+                <td></td>
+                <td>float16</td>
+                <td>where_en</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>Qwen</td>
+                <td></td>
+                <td>float16</td>
+                <td>gps_en</td>
+                <td>-</td>
+                <td><a href="shifting_maps_Qwen2.5-14B_float16_gps_en.html">shifting_maps_Qwen2.5-14B_float16_gps_en.html</a></td>
+            </tr>
+            
+            <tr>
+                <td>Qwen</td>
+                <td></td>
+                <td>int8</td>
+                <td>empty</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>Qwen</td>
+                <td></td>
+                <td>int8</td>
+                <td>where_fr</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>Qwen</td>
+                <td></td>
+                <td>int8</td>
+                <td>gps_fr</td>
+                <td>-</td>
+                <td><a href="shifting_maps_Qwen2.5-14B_int8_gps_fr.html">shifting_maps_Qwen2.5-14B_int8_gps_fr.html</a></td>
+            </tr>
+            
+            <tr>
+                <td>Qwen</td>
+                <td></td>
+                <td>int8</td>
+                <td>where_en</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>Qwen</td>
+                <td></td>
+                <td>int8</td>
+                <td>gps_en</td>
+                <td>-</td>
+                <td><a href="shifting_maps_Qwen2.5-14B_int8_gps_en.html">shifting_maps_Qwen2.5-14B_int8_gps_en.html</a></td>
+            </tr>
+            
+            <tr>
+                <td>Qwen</td>
+                <td></td>
+                <td>int4</td>
+                <td>empty</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>Qwen</td>
+                <td></td>
+                <td>int4</td>
+                <td>where_fr</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>Qwen</td>
+                <td></td>
+                <td>int4</td>
+                <td>gps_fr</td>
+                <td>-</td>
+                <td><a href="shifting_maps_Qwen2.5-14B_int4_gps_fr.html">shifting_maps_Qwen2.5-14B_int4_gps_fr.html</a></td>
+            </tr>
+            
+            <tr>
+                <td>Qwen</td>
+                <td></td>
+                <td>int4</td>
+                <td>where_en</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>Qwen</td>
+                <td></td>
+                <td>int4</td>
+                <td>gps_en</td>
+                <td>-</td>
+                <td><a href="shifting_maps_Qwen2.5-14B_int4_gps_en.html">shifting_maps_Qwen2.5-14B_int4_gps_en.html</a></td>
+            </tr>
+            
+            <tr>
+                <td>Qwen</td>
+                <td></td>
+                <td>float16</td>
+                <td>empty</td>
+                <td>Instruct</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>Qwen</td>
+                <td></td>
+                <td>float16</td>
+                <td>where_fr</td>
+                <td>Instruct</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>Qwen</td>
+                <td></td>
+                <td>float16</td>
+                <td>gps_fr</td>
+                <td>Instruct</td>
+                <td><a href="shifting_maps_Qwen2.5-14B-Instruct_float16_gps_fr.html">shifting_maps_Qwen2.5-14B-Instruct_float16_gps_fr.html</a></td>
+            </tr>
+            
+            <tr>
+                <td>Qwen</td>
+                <td></td>
+                <td>float16</td>
+                <td>where_en</td>
+                <td>Instruct</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>Qwen</td>
+                <td></td>
+                <td>float16</td>
+                <td>gps_en</td>
+                <td>Instruct</td>
+                <td><a href="shifting_maps_Qwen2.5-14B-Instruct_float16_gps_en.html">shifting_maps_Qwen2.5-14B-Instruct_float16_gps_en.html</a></td>
+            </tr>
+            
+            <tr>
+                <td>Qwen</td>
+                <td></td>
+                <td>int8</td>
+                <td>empty</td>
+                <td>Instruct</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>Qwen</td>
+                <td></td>
+                <td>int8</td>
+                <td>where_fr</td>
+                <td>Instruct</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>Qwen</td>
+                <td></td>
+                <td>int8</td>
+                <td>gps_fr</td>
+                <td>Instruct</td>
+                <td><a href="shifting_maps_Qwen2.5-14B-Instruct_int8_gps_fr.html">shifting_maps_Qwen2.5-14B-Instruct_int8_gps_fr.html</a></td>
+            </tr>
+            
+            <tr>
+                <td>Qwen</td>
+                <td></td>
+                <td>int8</td>
+                <td>where_en</td>
+                <td>Instruct</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>Qwen</td>
+                <td></td>
+                <td>int8</td>
+                <td>gps_en</td>
+                <td>Instruct</td>
+                <td><a href="shifting_maps_Qwen2.5-14B-Instruct_int8_gps_en.html">shifting_maps_Qwen2.5-14B-Instruct_int8_gps_en.html</a></td>
+            </tr>
+            
+            <tr>
+                <td>Qwen</td>
+                <td></td>
+                <td>int4</td>
+                <td>empty</td>
+                <td>Instruct</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>Qwen</td>
+                <td></td>
+                <td>int4</td>
+                <td>where_fr</td>
+                <td>Instruct</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>Qwen</td>
+                <td></td>
+                <td>int4</td>
+                <td>gps_fr</td>
+                <td>Instruct</td>
+                <td><a href="shifting_maps_Qwen2.5-14B-Instruct_int4_gps_fr.html">shifting_maps_Qwen2.5-14B-Instruct_int4_gps_fr.html</a></td>
+            </tr>
+            
+            <tr>
+                <td>Qwen</td>
+                <td></td>
+                <td>int4</td>
+                <td>where_en</td>
+                <td>Instruct</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>Qwen</td>
+                <td></td>
+                <td>int4</td>
+                <td>gps_en</td>
+                <td>Instruct</td>
+                <td><a href="shifting_maps_Qwen2.5-14B-Instruct_int4_gps_en.html">shifting_maps_Qwen2.5-14B-Instruct_int4_gps_en.html</a></td>
+            </tr>
+            
+            <tr>
+                <td>Qwen</td>
+                <td></td>
+                <td>float16</td>
+                <td>empty</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>Qwen</td>
+                <td></td>
+                <td>float16</td>
+                <td>where_fr</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>Qwen</td>
+                <td></td>
+                <td>float16</td>
+                <td>gps_fr</td>
+                <td>-</td>
+                <td><a href="shifting_maps_Qwen2.5-32B_float16_gps_fr.html">shifting_maps_Qwen2.5-32B_float16_gps_fr.html</a></td>
+            </tr>
+            
+            <tr>
+                <td>Qwen</td>
+                <td></td>
+                <td>float16</td>
+                <td>where_en</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>Qwen</td>
+                <td></td>
+                <td>float16</td>
+                <td>gps_en</td>
+                <td>-</td>
+                <td><a href="shifting_maps_Qwen2.5-32B_float16_gps_en.html">shifting_maps_Qwen2.5-32B_float16_gps_en.html</a></td>
+            </tr>
+            
+            <tr>
+                <td>Qwen</td>
+                <td></td>
+                <td>int8</td>
+                <td>empty</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>Qwen</td>
+                <td></td>
+                <td>int8</td>
+                <td>where_fr</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>Qwen</td>
+                <td></td>
+                <td>int8</td>
+                <td>gps_fr</td>
+                <td>-</td>
+                <td><a href="shifting_maps_Qwen2.5-32B_int8_gps_fr.html">shifting_maps_Qwen2.5-32B_int8_gps_fr.html</a></td>
+            </tr>
+            
+            <tr>
+                <td>Qwen</td>
+                <td></td>
+                <td>int8</td>
+                <td>where_en</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>Qwen</td>
+                <td></td>
+                <td>int8</td>
+                <td>gps_en</td>
+                <td>-</td>
+                <td><a href="shifting_maps_Qwen2.5-32B_int8_gps_en.html">shifting_maps_Qwen2.5-32B_int8_gps_en.html</a></td>
+            </tr>
+            
+            <tr>
+                <td>Qwen</td>
+                <td></td>
+                <td>int4</td>
+                <td>empty</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>Qwen</td>
+                <td></td>
+                <td>int4</td>
+                <td>where_fr</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>Qwen</td>
+                <td></td>
+                <td>int4</td>
+                <td>gps_fr</td>
+                <td>-</td>
+                <td><a href="shifting_maps_Qwen2.5-32B_int4_gps_fr.html">shifting_maps_Qwen2.5-32B_int4_gps_fr.html</a></td>
+            </tr>
+            
+            <tr>
+                <td>Qwen</td>
+                <td></td>
+                <td>int4</td>
+                <td>where_en</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>Qwen</td>
+                <td></td>
+                <td>int4</td>
+                <td>gps_en</td>
+                <td>-</td>
+                <td><a href="shifting_maps_Qwen2.5-32B_int4_gps_en.html">shifting_maps_Qwen2.5-32B_int4_gps_en.html</a></td>
+            </tr>
+            
+            <tr>
+                <td>Qwen</td>
+                <td></td>
+                <td>float16</td>
+                <td>empty</td>
+                <td>Instruct</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>Qwen</td>
+                <td></td>
+                <td>float16</td>
+                <td>where_fr</td>
+                <td>Instruct</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>Qwen</td>
+                <td></td>
+                <td>float16</td>
+                <td>gps_fr</td>
+                <td>Instruct</td>
+                <td><a href="shifting_maps_Qwen2.5-32B-Instruct_float16_gps_fr.html">shifting_maps_Qwen2.5-32B-Instruct_float16_gps_fr.html</a></td>
+            </tr>
+            
+            <tr>
+                <td>Qwen</td>
+                <td></td>
+                <td>float16</td>
+                <td>where_en</td>
+                <td>Instruct</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>Qwen</td>
+                <td></td>
+                <td>float16</td>
+                <td>gps_en</td>
+                <td>Instruct</td>
+                <td><a href="shifting_maps_Qwen2.5-32B-Instruct_float16_gps_en.html">shifting_maps_Qwen2.5-32B-Instruct_float16_gps_en.html</a></td>
+            </tr>
+            
+            <tr>
+                <td>Qwen</td>
+                <td></td>
+                <td>int8</td>
+                <td>empty</td>
+                <td>Instruct</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>Qwen</td>
+                <td></td>
+                <td>int8</td>
+                <td>where_fr</td>
+                <td>Instruct</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>Qwen</td>
+                <td></td>
+                <td>int8</td>
+                <td>gps_fr</td>
+                <td>Instruct</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>Qwen</td>
+                <td></td>
+                <td>int8</td>
+                <td>where_en</td>
+                <td>Instruct</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>Qwen</td>
+                <td></td>
+                <td>int8</td>
+                <td>gps_en</td>
+                <td>Instruct</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>Qwen</td>
+                <td></td>
+                <td>int4</td>
+                <td>empty</td>
+                <td>Instruct</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>Qwen</td>
+                <td></td>
+                <td>int4</td>
+                <td>where_fr</td>
+                <td>Instruct</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>Qwen</td>
+                <td></td>
+                <td>int4</td>
+                <td>gps_fr</td>
+                <td>Instruct</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>Qwen</td>
+                <td></td>
+                <td>int4</td>
+                <td>where_en</td>
+                <td>Instruct</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>Qwen</td>
+                <td></td>
+                <td>int4</td>
+                <td>gps_en</td>
+                <td>Instruct</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>Qwen</td>
+                <td></td>
+                <td>float16</td>
+                <td>empty</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>Qwen</td>
+                <td></td>
+                <td>float16</td>
+                <td>where_fr</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>Qwen</td>
+                <td></td>
+                <td>float16</td>
+                <td>gps_fr</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>Qwen</td>
+                <td></td>
+                <td>float16</td>
+                <td>where_en</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>Qwen</td>
+                <td></td>
+                <td>float16</td>
+                <td>gps_en</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>Qwen</td>
+                <td></td>
+                <td>int8</td>
+                <td>empty</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>Qwen</td>
+                <td></td>
+                <td>int8</td>
+                <td>where_fr</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>Qwen</td>
+                <td></td>
+                <td>int8</td>
+                <td>gps_fr</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>Qwen</td>
+                <td></td>
+                <td>int8</td>
+                <td>where_en</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>Qwen</td>
+                <td></td>
+                <td>int8</td>
+                <td>gps_en</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>Qwen</td>
+                <td></td>
+                <td>int4</td>
+                <td>empty</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>Qwen</td>
+                <td></td>
+                <td>int4</td>
+                <td>where_fr</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>Qwen</td>
+                <td></td>
+                <td>int4</td>
+                <td>gps_fr</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>Qwen</td>
+                <td></td>
+                <td>int4</td>
+                <td>where_en</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>Qwen</td>
+                <td></td>
+                <td>int4</td>
+                <td>gps_en</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>Qwen</td>
+                <td></td>
+                <td>float16</td>
+                <td>empty</td>
+                <td>Instruct</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>Qwen</td>
+                <td></td>
+                <td>float16</td>
+                <td>where_fr</td>
+                <td>Instruct</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>Qwen</td>
+                <td></td>
+                <td>float16</td>
+                <td>gps_fr</td>
+                <td>Instruct</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>Qwen</td>
+                <td></td>
+                <td>float16</td>
+                <td>where_en</td>
+                <td>Instruct</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>Qwen</td>
+                <td></td>
+                <td>float16</td>
+                <td>gps_en</td>
+                <td>Instruct</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>Qwen</td>
+                <td></td>
+                <td>int8</td>
+                <td>empty</td>
+                <td>Instruct</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>Qwen</td>
+                <td></td>
+                <td>int8</td>
+                <td>where_fr</td>
+                <td>Instruct</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>Qwen</td>
+                <td></td>
+                <td>int8</td>
+                <td>gps_fr</td>
+                <td>Instruct</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>Qwen</td>
+                <td></td>
+                <td>int8</td>
+                <td>where_en</td>
+                <td>Instruct</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>Qwen</td>
+                <td></td>
+                <td>int8</td>
+                <td>gps_en</td>
+                <td>Instruct</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>Qwen</td>
+                <td></td>
+                <td>int4</td>
+                <td>empty</td>
+                <td>Instruct</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>Qwen</td>
+                <td></td>
+                <td>int4</td>
+                <td>where_fr</td>
+                <td>Instruct</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>Qwen</td>
+                <td></td>
+                <td>int4</td>
+                <td>gps_fr</td>
+                <td>Instruct</td>
+                <td><a href="shifting_maps_Qwen2.5-72B-Instruct_int4_gps_fr.html">shifting_maps_Qwen2.5-72B-Instruct_int4_gps_fr.html</a></td>
+            </tr>
+            
+            <tr>
+                <td>Qwen</td>
+                <td></td>
+                <td>int4</td>
+                <td>where_en</td>
+                <td>Instruct</td>
+                <td>-</td>
+            </tr>
+            
+            <tr>
+                <td>Qwen</td>
+                <td></td>
+                <td>int4</td>
+                <td>gps_en</td>
+                <td>Instruct</td>
+                <td><a href="shifting_maps_Qwen2.5-72B-Instruct_int4_gps_en.html">shifting_maps_Qwen2.5-72B-Instruct_int4_gps_en.html</a></td>
+            </tr>
+            
+    </table>
+</body>
+</html>
