@@ -54,7 +54,8 @@ list_of_prompts = {
 - Extract embedding and generate GPS coordinates with LLM: `python 1.embeddings.py` 
 - Map GPS coordinates using embedding with linear regression: `2_regression.py`
 - Extract GPS coordinates from models' output: `3_gps_prediction_eval.py`
-- Analyse results : `4_results_analyzing.ipynb`
+- Analyse results for GPS coordinates : `4_results_analyzing.ipynb`
+- Analyse result for probing embedding: `5_Probing.ipynb`
 
 5. postprocessing
 
