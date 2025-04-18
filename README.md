@@ -42,7 +42,6 @@ list_of_prompts = {
 2. Download input data
 
 - Download France geonames data from OpenDataSoft: [[link](https://public.opendatasoft.com/explore/dataset/geonames-all-cities-with-a-population-1000/export/?flg=fr-fr&disjunctive.cou_name_en&sort=name&refine.cou_name_en=France)]
-- Donwload France mainland boundaries from [github.com/gregoiredavid/france-geojson](https://github.com/gregoiredavid/france-geojson/blob/master/metropole.geojson)
 
 3. Pipeline configuration
 
@@ -55,7 +54,13 @@ list_of_prompts = {
 - Extract embedding and generate GPS coordinates with LLM: `python 1.embeddings.py` 
 - Map GPS coordinates using embedding with linear regression: `2_regression.py`
 - Extract GPS coordinates from models' output: `3_gps_prediction_eval.py`
-- Analyse results : **TODO**
+- Analyse results for GPS coordinates : `4_results_analyzing.ipynb`
+- Analyse result for probing embedding: `5_Probing.ipynb`
+
+5. postprocessing
+
+- If you have to stop `python 1.embeddings.py` and re-run several times, you'll have to merge results into a single file: `src/postprocessing/concatenate_multiple_pickle.py`
+- make the shifted maps (between reel GPS coordinates and predicted one): `src/postprocessing/shifted_maps.ipynb`
 
 ---
 
