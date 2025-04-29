@@ -14,7 +14,7 @@ import json
 
 # cities = pk.load(open("outputs/cities_embeddings.pk", "rb"))
 # cities = pk.load(open("outputs/TMP/TMP_cities_embeddings_Mistral-Small-24B-Base-2501_int4_gps_en.pk", "rb"))
-cities = pk.load(open("outputs/intermediate_results_3.pk", "rb"))
+cities = pk.load(open("outputs/TMP/intermediate_results_4.pk", "rb"))
 cities = cities.sample(frac=1.0, random_state=0)
 cities[['Latitude', 'Longitude']] = cities['Coordinates'].str.split(", ", expand=True)
 cities['Latitude'] = cities['Latitude'].astype(float)
