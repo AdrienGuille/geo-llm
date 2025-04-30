@@ -25,6 +25,11 @@ list_of_prompts = {
 }
 ```
 
+| Cartogram with Mistral-Small-24B | Cartogram with Mistral-7B_v0.1 | Discretisation and Greenwich trouble |
+|----------------------------------|----------------------------------|--------------------------------------|
+| ![](readme.img/anamorphose_mistral-small-24B.png) | ![](readme.img/anamorphose_mistral-7B-v0.1.png) | ![](readme.img/shifted_map_discretisation.png) |
+
+
 ## Evaluation of geographic knowledge quality
 
 2 evaluations proposed:
@@ -62,6 +67,9 @@ list_of_prompts = {
 - If you have to stop `python 1.embeddings.py` and re-run several times, you'll have to merge results into a single file: `src/postprocessing/concatenate_multiple_pickle.py`
 - make the shifted maps (between reel GPS coordinates and predicted one): `src/postprocessing/shifted_maps.ipynb`
 - create the cartograms (France boundaries as seen by LLMs): `src/postprocessing/anamorphose.ipynb`
+
+## Results
+![](readme.img/a_visu_without_outliers.png)
 
 ---
 
