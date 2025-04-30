@@ -61,6 +61,7 @@ list_of_prompts = {
 
 - If you have to stop `python 1.embeddings.py` and re-run several times, you'll have to merge results into a single file: `src/postprocessing/concatenate_multiple_pickle.py`
 - make the shifted maps (between reel GPS coordinates and predicted one): `src/postprocessing/shifted_maps.ipynb`
+- create the cartograms (France boundaries as seen by LLMs): `src/postprocessing/anamorphose.ipynb`
 
 ---
 
