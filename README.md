@@ -25,7 +25,7 @@ list_of_prompts = {
 }
 ```
 
-| Cartogram with Mistral-Small-24B | Cartogram with Mistral-7B_v0.1 | Discretisation and Greenwich trouble |
+| Cartogram with Mistral-Small-24B | Cartogram with Mistral-7B_v0.1 | Discretisation and Greenwich issues |
 |----------------------------------|----------------------------------|--------------------------------------|
 | ![](readme.img/anamorphose_mistral-small-24B.png) | ![](readme.img/anamorphose_mistral-7B-v0.1.png) | ![](readme.img/shifted_map_discretisation.png) |
 
